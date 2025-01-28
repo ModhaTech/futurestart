@@ -1,0 +1,227 @@
+@extends('layouts.talent') @section('content')
+
+@if(Auth::check())
+		 @php $bannerclass = 'now_logged'; @endphp
+		 
+         @else
+		 @php $bannerclass = 'now_loggedout'; @endphp
+		 
+         @endif
+
+<style type="text/css">
+  .sty-cat-head{
+    
+  }
+</style>
+<?php 
+    $catagory->catagory_desc = str_replace('<h1', '<h2', $catagory->catagory_desc);  
+    $catagory->catagory_desc = str_replace('</h1', '</h2', $catagory->catagory_desc);  
+?>
+<!-- start page title section -->
+<section  class="{{$bannerclass}} wow fadeIn cover-background background-position-center top-space star-search-cat" style="">
+		<img src="{{ asset($catagory->catagory_detailed_banner)}}" width="100%" alt="Category">
+            <div class="opacity-medium"></div>
+        </section>
+        <!-- end page title section -->
+        
+        <section class="wow fadeIn py-3">
+            <div class="container">
+              <h1 class="alt-font text-black font-weight-600 text-center mb-0 star-search-abd">{{$catagory->name}}</h1>
+              <h2 class="alt-font text-black font-weight-600 text-center mb-0 star-search-abd">{{$catagory->heading}}</h2>
+            </div>
+        </section>
+        
+        <!-- start accordion section -->
+        <section class="bg-light-gray border-none wow fadeIn pb-0 pt-0">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 wow fadeInLeft mb-5 sty-cat-head">
+                        {{-- <span class="text-center alt-font d-block text-extra-dark-gray font-weight-500 mb-5 author-moretext1" id="des-{{$catagory->id}}" > {!! $catagory->catagory_desc !!}</span> 
+                        <span class="text-center alt-font text-extra-dark-gray font-weight-500 mb-5 author-moretext star-search-textdd" id="des-{{$catagory->id}}" > {!! $catagory->catagory_desc !!}</span> --}}
+						
+						<a class="authors-moreless-button btn btn-small btn-transparent-black" id="read_button" href="javascript: void(0)" onclick='desopen("des-{{$catagory->id}}")'>Read More</a>
+						
+                        <div class="text-center mt-5">
+                          @if(Auth::check())
+                            <a class="btn btn-small btn-transparent-black" href="{{ route('talent.index') }}" >PURCHASE NEW TALENT</a> 
+                          @else
+                            <a class="btn btn-small btn-transparent-black" data-toggle="modal" data-target="#register_my_model" href="javascript::void(0)" >PURCHASE NEW TALENT</a> 
+                          @endif
+
+                          @if(Auth::check() && Auth::user()->role_id =='4')
+                              <a class="btn btn-small btn-dark-gray" href="{{ route('seller.index') }}"
+                               style="margin-left:4px;" >SELL YOUR TALENT</a>
+                            @elseif(Auth::check() && Auth::user()->role_id =='3')
+                               <a class="btn btn-small btn-dark-gray" href="javascript:void(0);" data-toggle="modal" data-target="#askToJoinAsSeller" style="margin-left:4px;" >SELL YOUR TALENT</a>
+                            @else
+                            <a class="btn btn-small btn-dark-gray" href="javascript:void(0);" data-toggle="modal" data-target="#register_my_model" style="margin-left:4px;" >SELL YOUR TALENT</a>
+                            @endif
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 cover-background sm-height-auto xs-height-350px wow fadeInRight" style="background: url({{ asset($catagory->catagory_banner)}} )"></div>
+                </div>
+            </div>
+        </section>
+        <!-- end accordion section -->
+
+        <!-- start social icons style 02 section -->
+        <section class="wow fadeIn">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7 col-sm-12 col-xs-12 text-center mb-5">
+                        <div class="position-relative overflow-hidden width-100">
+                            <span class="text-small text-outside-line-full alt-font font-weight-600 text-uppercase">SHARE IT ON</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center elements-social social-icon-style-4">
+                        <ul class="medium-icon">
+                            <li>
+                                <a class="facebook customer share" href="http://www.facebook.com/sharer.php?u={{ Request::url() }}" shareButton="facebook" >
+                                  <i class="fa fa-facebook-f"></i>
+                                  <span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="twitter customer share" href="http://twitter.com/share?text=share&url={{ Request::url() }}" shareButton="twitter">
+                                  <i class="fa fa-twitter"></i>
+                                  <span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="linkedin customer share" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{Request::url()}}" >
+                                  <i class="fa fa-linkedin"></i>
+                                  <span></span>
+                                </a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end social icons style 02 section -->
+
+<a class="scroll-top-arrow" href="javascript:void(0);" style="display: inline;"><i  class="ti-arrow-up"></i></a>
+
+<!-- ASK TO LOGIN -->
+<div class="modal-ask-to-login fade" id="askToLogin" role="dialog">
+    <div class="modal-dialog">
+        <form>
+            <!-- Modal content-->
+            <div class="ask-to-login">
+                <div class="modal-body">
+                    <div class="form-group text-spinner">
+
+                        <h3 class="deleteConfirmation">Please login to use this feature! </h3>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Ask to join as Buyer -->
+
+<div class="modal-ask-to-login fade" id="askToJoinAsBuyer" role="dialog">
+    <div class="modal-dialog">
+        <form>
+            <!-- Modal content-->
+            <div class="ask-to-login">
+                <div class="modal-body">
+                    <br />
+                    <h3 class="ask-register"> To use this feature please register as Seller. <br /> <small>By clicking Register, you will be logged out from your current account. </small></h3>
+                    <!-- <i class="fa fa-circle-o-notch fa-spin"></i> -->
+                </div>
+                <div class="modal-footer ">
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal" >REGISTER</button>
+                    <button type="button" class="btn btn-default btn-d" data-dismiss="modal">CANCEL</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Ask to join as Seller -->
+
+<div class="modal-ask-to-login fade" id="askToJoinAsSeller" role="dialog">
+    <div class="modal-dialog">
+     <div class="modal-content buyer-form">
+       <div class="modal-header">
+           
+          <h5 class="modal-title">You are login as Buyer.</h5>
+       </div>
+       <div class="modal-body">
+          <p><strong style="font-size:20px !important;"> To use this feature please register as Seller.</strong></p>
+           <p> By clicking Register, you will be logged out from your current account.</p>
+        </div>
+        <div class="modal-footer sec-btn">
+        <a href="javascript:void(0)"
+            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+            Register
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        <a href="javascript:void(0)" data-dismiss="modal">Cancel</a>
+       </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="container">
+   <!-- Modal -->
+  
+</div>
+@endsection
+@section('javascript')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+   (function($)
+   {
+   
+   /**
+   * jQuery function to prevent default anchor event and take the href * and the title to make a share popup
+   *
+   * @param  {[object]} e           [Mouse event]
+   * @param  {[integer]} intWidth   [Popup width defalut 500]
+   * @param  {[integer]} intHeight  [Popup height defalut 400]
+   * @param  {[boolean]} blnResize  [Is popup resizeabel default true]
+   */
+   $.fn.customerPopup = function (e, intWidth, intHeight, blnResize) {
+   
+   // Prevent default anchor event
+   e.preventDefault();
+   
+   // Set values for window
+   intWidth = intWidth || '500';
+   intHeight = intHeight || '400';
+   strResize = (blnResize ? 'yes' : 'no');
+   
+   // Set title and open popup with focus on it
+   var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
+       strParam = 'width=' + intWidth + ',height=' + intHeight + ',resizable=' + strResize,            
+       objWindow = window.open(this.attr('href'), strTitle, strParam).focus();
+   }
+   
+   /* ================================================== */
+   
+   $(document).ready(function ($) {
+   $('.customer.share').on("click", function(e) 
+   {
+       $(this).customerPopup(e);
+   });
+   });
+   
+   }(jQuery));
+
+/*==================================================*/
+
+</script>
+@stop
