@@ -1,0 +1,2 @@
+[09-Apr-2022 02:23:14 UTC] PHP Deprecated:  Function create_function() is deprecated in /home/futurest/public_html/resources/views/auth/passwords/blade.php on line 925
+[09-Apr-2022 02:23:18 UTC] PHP Deprecated:  Function create_function() is deprecated in /home/futurest/public_html/resources/views/auth/passwords/blade.php on line 925
