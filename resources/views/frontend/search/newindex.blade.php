@@ -72,9 +72,9 @@
 
 @media (max-width: 768px) {
     .footer .col-sm-3 {
-        width: 25%; /* 4 columns (25% width each) on mobile */
-        flex: 0 0 25%;
-        max-width: 25%;
+        width: 100%;
+        flex: 0 0 54%;
+        max-width: 100%;
     }
 
     .footer .row {
@@ -204,17 +204,21 @@
         }
 
         .btn-view-profile {
-            background-color: white; /* White background for the button */
-            color: #151829; /* Dark text color to match card body */
-            border-radius: 20px; /* Rounded corners */
-            border: none; /* Remove border */
-            padding: 2px 10px; /* Smaller padding for a smaller button */
-            font-size: 14px; /* Smaller font size for the button */
-          text-transform: lowercase;
-
-            font-weight: bold; /* Bold text */
+            background-color: #ff214f;
+    color: #ececed;
+    border-radius: 7px;
+    border: none;
+    padding: 2px 10px;
+    font-size: 11px;
+    text-transform: lowercase;
+    font-weight: 500;
         }
 
+        .card:hover {
+  /* Hover effect */
+  transform: translateY(-10px); /* Moves the card up */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhances the shadow */
+}
         .btn-view-profile:hover {
             background-color: #f0f0f0; /* Light grey background on hover */
             color: #151829; /* Dark text color on hover */

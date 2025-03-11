@@ -20,6 +20,7 @@
 
 .custom-card {
     background-color: rgba(0, 0, 0, 0.7) !important;
+    /* background-color: rgb(126 126 52 / 65%) !important; */
     color: white !important; 
     height: 250px;
     padding: 25px;
@@ -28,7 +29,7 @@
     flex-direction: column;
     justify-content: center; 
     text-align: center; 
-    border-radius: 0px !important;
+    border-radius: 40px !important;
     margin-top: 120px;
    
 }
@@ -42,36 +43,36 @@
 }
 
 .search-container input {
-    width: 80%;
-    padding: 10px 40px 11px 10px; /* Added padding-right for the icon */
+    width: 300px;
+    padding: 13px 22px 10px 20px;
     border-radius: 25px; /* Border radius set to 10px */
-    border: none;
+    border: 3px solid #FFD700;
     box-shadow: none;
 }
 
 .search-container i {
     position: absolute;
-    right: 10%;
+    right: 0%;
     top: 50%;
     transform: translateY(-50%);
     color: #000;
     background-color: yellow; /* Set background color to yellow */
-    padding: 13px;
-    border-radius: 0 25px 25px 0; /* Rounded corners on the right side */
+    padding: 16px;
+    border-radius: 25px 25px 25px 25px; /* Rounded corners on the right side */
 }
 
 
    .btn-link {
-   padding: 11px;
-    margin: 8px;
+   padding: 15px;
+    margin: 10px;
     display: inline-block;
     text-decoration: none;
     color: white;
     background-color: black;
     border-radius: 20px;
     border: 2px solid white;
-    width: 22%;
-    height: 29px;
+    width: 40%;
+    height: 40px;
     text-align: center;
     line-height: 5px;
     text-transform: uppercase;
@@ -87,24 +88,24 @@
 }
 .btn-link:hover,
 .btn-link:focus {
-    background-color: red; /* Set the background color to red */
-    color: white; /* Set the text color to white */
-    text-decoration: none; /* Ensure no underline */
+    background-color: red; 
+    color: white;
+    text-decoration: none; 
 }
 
 .textcard {
     font-size: 20px !important;
-    line-height: 23px !important;
-    word-break: break-word; /* Allows words to break in half */
-    hyphens: auto; /* Adds  */
+    line-height: 45px !important;
+    word-break: break-word; 
+    hyphens: auto;
     color: white !important;
-      text-transform: uppercase; /* Makes the text uppercase */
+      text-transform: uppercase;
 }
 
  .hpfs01 {
     width: 100%;
     height: 100vh;
-    background: url('assets/images/new-home/home_bg_new.png') no-repeat center center;
+    background: url('assets/images/new-home/home_bg_new.webp') no-repeat center center;
     background-size: cover;
     position: relative;
     display: flex;
@@ -230,9 +231,88 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visual depth */
 }
 
+.card:hover {
+    transform: scale(1.05) !important; /* Slightly enlarges the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* Adds a shadow effect */
+    transition: all 0.3s ease-in-out !important; /* Smooth transition */
+}
+
 
 .card-title {
-    color: black; /* Set text color for card titles */
+    color: white !important;
+    font-size: 16px !important;
+}
+
+.card-text {
+    color: white !important;
+    font-size: 14px !important;
+}
+
+
+.flip-card {
+    perspective: 1000px; /* Gives a 3D effect */
+    width: 100%;
+    height: 300px; /* Set fixed height */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); /* Flips the card */
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures proper image fit */
+    border-radius: 15px;
+}
+
+.flip-card-back {
+    background: #1c1c1c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.hh1{
+    margin-bottom: 6rem !important;
 }
 
 .card-text {
@@ -385,11 +465,11 @@
     }
     .feature-content .text-extra-dark-gray {
         color: #f2f2f2 !important; /* Lighter color for the headings */
-        font-size: 25px!important; /* Increase the font size of headings */
+        font-size: 20px!important; /* Increase the font size of headings */
     }
     .feature-content p {
         color: #e6e6e6 !important; /* Lighter color for the text */
-        font-size: 18px !important; /* Increase the font size of paragraphs */
+        font-size: 13px !important; /* Increase the font size of paragraphs */
     }
     .text-uppercase1.alt-font.text-extra-dark-gray {
         font-size: 3rem !important; /* Increase the font size of the h2 heading */
@@ -397,14 +477,15 @@
         color: white !important;
     }
     .text22 a.btn {
-         font-size: 19px;
-        background-color: #ff0000 !important;
-        border-color: #ff0000 !important;
-        height: 70px !important;
-        padding: 11px 12px !important;
+        color: black;
+        font-size: 14px;
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+        height: 55px !important;
+        padding: 10px 20px !important;
         line-height: 2.5 !important;
-        border-radius: 5px !important;
-}
+        border-radius: 30px !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -506,6 +587,51 @@
     width: 100%; /* Set the container width */
 }
 
+
+.feature-box-content .nw {
+    display: flex;
+    justify-content: center;
+}
+
+.feature-box-content .p-4 {
+    border-radius: 15px; /* Rounded corners */
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-box-content .p-4:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.feature-box-content video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for videos */
+    object-fit: cover; /* Ensures video fits nicely */
+}
+
+.feature-box-content span {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 700;
+}
+
+.feature-box-content p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.8; /* Slight transparency for better readability */
+}
+
+/* Custom text colors */
+.text-blue { color: #007bff; } /* Bootstrap primary blue */
+.text-red { color: #e74c3c; } /* Red */
+.text-yellow { color: #f1c40f; } /* Yellow */
+.text-green { color: #2ecc71; } /* Green */
+
+
 .search-results {
     position: absolute;
     top: 100%; /* Makes the list appear right below the search bar */
@@ -563,9 +689,8 @@
           <div class="container card-container">
         <div class="custom-card">
             <div class="card-body hh34">
-             
-                <img src="{{ asset('assets/images/new-home/futt.svg') }}" alt="FutureStarr" class="card-title img-fluid">
-                <h6  class="textcard">The Ultimate Talent Marketplace</h6>
+                {{-- <h2 class="future_tittle">FUTURESTARR</h2> --}}
+                {{-- <h6  class="textcard">The Ultimate Talent Marketplace</h6> --}}
                 <div class="search-container">
                     <input class="mb-0 bg-search-theme-light text-dark" name="name" id="search" placeholder="Search" type="text" autocomplete="off">
                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -650,33 +775,50 @@
         </div>
         <div class="row hh1">
             <div class="col-md-4 mb-4 text-center grid-item">
-                <div class="card blog-post1">
-                    <img src="{{ asset('assets/images/new-home/new3.jpg') }}" class="card-img-top" alt="JAZZY B">
-                    <div class="card-body">
-                        <h4 class="card-title text-dark">JAZZY B</h4>
-                        <p class="card-text p1">An upcoming Atlanta-based hip-hop artist who has used FutureStarr to grow her audience and sell her latest album. Jazzy B is known for her vibrant energy and unique style, captivating a growing fan base with her powerful performances.</p>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <!-- Front Side (Image) -->
+                        <div class="flip-card-front">
+                            <img src="{{ asset('assets/images/new-home/new3.jpg') }}" class="card-img-top" alt="JAZZY B">
+                        </div>
+                        <!-- Back Side (Content) -->
+                        <div class="flip-card-back">
+                            <h4 class="card-title">- JAZZY B -</h4>
+                            <p class="card-text">An upcoming Atlanta-based hip-hop artist who has used FutureStarr to grow her audience and sell her latest album.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        
             <div class="col-md-4 mb-4 text-center grid-item">
-                <div class="card blog-post1">
-                    <img src="{{ asset('assets/images/new-home/new2.jpg') }}" class="card-img-top" alt="DJ BEATMASTER B">
-                    <div class="card-body">
-                        <h4 class="card-title text-dark">DJ BEATMASTER B</h4>
-                        <p class="card-text p1">A well-known DJ in Atlanta who leverages FutureStarr to share exclusive mixes and connect with fans. DJ BeatMaster is celebrated for his charismatic stage presence and innovative mixes, drawing large crowds and energizing any event.</p>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ asset('assets/images/new-home/new2.jpg') }}" class="card-img-top" alt="DJ BEATMASTER B">
+                        </div>
+                        <div class="flip-card-back">
+                            <h4 class="card-title">- DJ BEATMASTER B -</h4>
+                            <p class="card-text">A well-known DJ in Atlanta who leverages FutureStarr to share exclusive mixes and connect with fans.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        
             <div class="col-md-4 mb-4 text-center grid-item">
-                <div class="card blog-post1 ">
-                    <img src="{{ asset('assets/images/new-home/new1.jpg') }}" class="card-img-top" alt="Rhythm and Flow">
-                    <div class="card-body">
-                        <h4 class="card-title text-dark">RHYTHM AND FLOW</h4>
-                        <p class="card-text p1">A hip-hop duo that has seen significant revenue growth and fan engagement through their profile on FutureStarr. Rhythm and Flow combine dynamic lyrics with engaging performances, quickly becoming a favorite in the Atlanta hip-hop scene.</p>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ asset('assets/images/new-home/new1.jpg') }}" class="card-img-top" alt="Rhythm and Flow">
+                        </div>
+                        <div class="flip-card-back">
+                            <h4 class="card-title">- RHYTHM AND FLOW -</h4>
+                            <p class="card-text">A hip-hop duo that has seen significant revenue growth and fan engagement through their profile on FutureStarr.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </section>
 
@@ -922,7 +1064,7 @@
             <img  alt="Demo_user" title="Demo User" class="demo-user" src="{{asset('assets/images/demo-user-360.png') }}" loading="lazy">
         </div>
         <div class="div-text">
-            <p class="head">Congrats Seller! Let's Get Started</p>
+            <p class="head">Congrats {{ $current_user->username }}! Let's Get Started</p>
             <p class="text">Click the Dashboard and Setup your Personal & Public Profile</p>
             <a href="{{ url('/seller/dashboard') }}" class="btn btn-primary">Continue</a>
         </div>
@@ -938,7 +1080,7 @@
             <p class="demo-buy">Buy</p>
         </div>
         <div class="div-text">
-            <p class="head">Congrats Buyer! Let's Get Started</p>
+            <p class="head">Congrats {{ $current_user->username }}! Let's Get Started</p>
             <p class="text">Click the Dashboard and Setup your Personal & Public Profile</p>
             <a href="{{ url('/buyer/dashboard') }}" class="btn btn-primary">Continue</a>
         </div>

@@ -184,18 +184,28 @@ class HomeController extends Controller
         }
         
         $users = [];
-        
+
+
+
+
+        $current_user = null; // Initialize the user variable
+
+        // Check if the user is authenticated
+        if (Auth::check()) {
+            $current_user = Auth::user(); // Get logged-in user data
+        }
+
         if(!empty(Auth::check())) 
         {
              $users = $this->users();
         }
         if (Auth::check()==true)
         {
-            return view($this->getView('newhome'),compact('blogs','metaTags', 'catagories', 'display_pop'));
+            return view($this->getView('newhome'),compact('blogs','metaTags', 'catagories', 'display_pop', 'current_user'));
         }
         else
         {
-         return view($this->getView('newhome'),compact('blogs','metaTags', 'catagories', 'display_pop'));
+         return view($this->getView('newhome'),compact('blogs','metaTags', 'catagories', 'display_pop', 'current_user'));
         }
     }
     

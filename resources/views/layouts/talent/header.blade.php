@@ -95,7 +95,7 @@
  <a class="{{$className}}" href="/" title="Future Starr" style="z-index: 9999;">
   <img loading="lazy" decoding="async" class="img-responsive sm-logo" alt="futurestarr logo" 
       src="{{ asset('assets/images/futurelogo.png')}}"
-      style="@if (Auth::guest())margin: -24px !important; margin-left: 49px !important; @else margin: 3px !important; ; @endif">
+      style="@if (Auth::guest())margin: -24px !important; margin-left: 9px !important; @else margin: 3px !important; ; @endif">
 </a>
 
 </div>
@@ -140,12 +140,12 @@
                <a href="{{ route('search.index')}}" title="Future Starr, Tattoo Artists">
                 <div class="header-icon">
                   
-                </div>STARR SEARCHQQ
+                </div>STARR SEARCH
                </a>
               </li>
               <li class="{{ Route::currentRouteName() == 'talent.index'  ? 'active' : '' }}">
                <a href="{{ route('talent.index')}}" title="Sign up, Future Starr, model photos, music songs, educational courses, fitness tips">
-                <div class="header-icon"></div>TALENT MALLFFF</a>
+                <div class="header-icon"></div>TALENT MALL</a>
               </li>
               <li class="{{ Route::currentRouteName() == 'social-buzz.index'  ? 'active' : '' }}">
                <a href="{{ route('social-buzz.index')}}" >
@@ -556,12 +556,11 @@
      <div class="modal-content">
       <div class="modal-header clo">
        <button type="button" class="close" data-dismiss="modal">X</button>
-       <p class="modal-title" >Login</p>
+       <p class="modal-title">Login</p>
      </div>
      <div class="modal-body lmsbo">
        <div class="">
         <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 login-back">
-         <p class="register-panel text-center mb-2" style="color:#fff; font-size: 22px !important;font-weight: 900 !important;"> Login </p>
          <span id="cred_error"></span>
          
           <input type="hidden" name="role_id" value="3">
@@ -774,8 +773,8 @@
       <p class="modal-title">Create Page Information</p>
     </div>
     <div class="modal-body">
-      <p><strong style="font-size:20px !important;"> To use this feature please register as Seller.</strong></p>
-      <p>Already have seller account.Login using seller details.</p>
+      <p><div class="modal-inner-text"> To use this feature please register as Seller.</div></p>
+      <div class="modal-inner-sub-text">Already have seller account. Login using seller details.</div>
     </div>
     <div class="modal-footer sec-btn">
       <a href="javascript:void(0)" data-dismiss="modal">Cancel</a>
