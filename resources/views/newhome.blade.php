@@ -489,20 +489,17 @@
 }
 
 @media (max-width: 768px) {
-.hpfs07{
-    display: none !impoatant;
-}
-.hpfs05{
+.hpfs05, .hpfs07{
       display: none !impoatant;
 }
 
-    .text12 h2 {
-        white-space: nowrap;
-        margin: 0 !important;
-        font-size: 2.5rem;
-        font-weight: 700;
-               padding-left: 20px;
-    }
+.text12 h2 {
+    white-space: nowrap;
+    margin: 0 !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+            padding-left: 20px;
+}
 
 .text12 p {
       font-weight: 400 !important;
