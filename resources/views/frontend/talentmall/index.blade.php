@@ -27,17 +27,19 @@
   <div class="container">
     <div class="row">
 	
-	   <div class="col-md-4 xs-padding-15px-lr">
+	   <div class="col-md-12 xs-padding-15px-lr">
       
           <div id="section">
-		  <div class="article">
-			<h2> Welcome To FutureStarr Browse And Buy Talents Across The Globe </h2>
+		  <div class="article" style="text-align: center">
+			<h2> Welcome To FutureStarr Browse And Buy <span class="line-break"> Talents Across The Globe </span></h2>
+      <span class="line-design"></span>
 			<p>Are you looking to purchase and support undiscovered entrepreneurs with amazing talent? Wouldn't it be awesome to see a display of talented people you can browse, shop online, and store it in your personal account to have immediate access to? Future Starr - Talent Mall is one of its kind and unique online marketplaces that give buyers a gateway to identify their favorite <strong>model photos</strong> ,  <strong>music songs</strong> ,  <strong>educational courses</strong> ,  <strong>fitness tips</strong> , and more. All you need to do is simply select which category best fits your interests and browse through a list of authentic talent that's seeking support to help grow their career. You as a buyer will be shopping for talented artists, teachers, fitness trainers, cooks, etc. looking to manage their social media networks and followers to make money online turning their hard work into viral dollars. 
 			</p>
-			<p class="moretext">
+			<p class="moretext" style="text-align: center">
 			  Through our platform, you can shop for the best talent on the internet or make money through promotion. <a href="{{ route('register') }}" title="register"> Sign up </a> with <a href='/' title='futurestarr'> Future Starr </a> and start your online shopping today or boost up your reputation among your followers. Future Starr's goal is to make sure we provide the best local talent across the globe. Our large and well-built industry network will also help people grow in their business ventures. Joining hands with <a href='/' title='futurestarr'> Future Starr </a> is the perfect matchmaker with buyers and talent owners making both stars in the market. Once you've uploaded your profile on the portal, you can alter and refresh it whenever you need it and start shopping. You can approach top talented owners and get associated with their significant audience everywhere throughout the globe. 
 			</p>
 		  </div>
+      <div style="text-align:center"></div>
 		  <a class="moreless-button" href="javascript: void(0)">Read more</a>
 		</div>
     
@@ -45,7 +47,7 @@
 	
 	
 	
-      <div class="col-md-8 no-padding xs-padding-15px-lr">
+      <div class="col-md-12 no-padding xs-padding-15px-lr mt-5">
         <div class="filter-content overflow-hidden talent-mall">
           <ul class="portfolio-grid portfolio-metro-grid work-2col hover-option5 gutter-large talent-mall-grid">
             <li class="grid-sizer" ></li>
@@ -56,7 +58,8 @@
               <a href="{{ route('talent.show',$catagory->slug)}}">
                 <figure>
                   <div class="portfolio-img talent-mall-port">
-                    <img  title="catagory of futurestarr" src="{{ asset( $catagory->catagory_image_path)}}" alt="{{$catagory->category_alt}}" />
+                    {{-- <img  title="catagory of futurestarr" src="{{ asset( $catagory->catagory_image_path)}}" alt="{{$catagory->category_alt}}" /> --}}
+                    <img  title="catagory of futurestarr" src="https://www.futurestarr.com/talent-mall-category-gifs/talentmallpage-categ-Entertainment.gif" alt="{{$catagory->category_alt}}" />
 					  
                     <!-- <img   title="" src="{{asset('assets/images/talent-mall/no_image-200x200.jpg')}}" /> -->
                   </div>

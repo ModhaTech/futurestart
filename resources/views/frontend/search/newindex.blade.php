@@ -266,67 +266,74 @@ i.fa.fa-search {
 <!-- Main Content -->
 <section class="s1 p-0 parallax mobile-height wow fadeIn hpfs01" data-stellar-background-ratio="0.5">
     <div class="custom-card">
-        <div class="card-body1">
-            <img src="{{ asset('assets/images/star-search/StarR_TEXT.svg') }}" alt="FutureStarr" class="card-title img-fluid"><br>
-            <img src="{{ asset('assets/images/star-search/SEARCH_text.svg') }}" alt="FutureStarr" class="card-title img-fluid">
+        <div class="card-body1 " style="text-align: center">
+            {{-- <span class="star-text">Star</span><br> --}}
+            {{-- <span class="search-text">Search</span> --}}
+            <h2 class="main_heading">
+                STARR
+            </h2>
+            <h6 style="font-size: 18px; font-weight: 600; color: #fff; text-transform: uppercase; letter-spacing: 2px; position: relative; display: inline-block;">
+                Search
+                <span class="line-design"></span>
+            </h6>
+
             <div class="search-container">
                 <input class="mb-0 bg-search-theme-light text-dark" name="name" id="search" placeholder="Search" type="text" autocomplete="off">
                 <i class="fa fa-search" aria-hidden="true"></i>
                  <ul class="search-results list-unstyled"></ul>
             </div>
-          <h4 class="text-white mt-3" style="text-transform: uppercase;">
-    The ultimate Atlanta Talent Marketplace 
-</h4>
-
+            <h4 class="text-white mt-3" style="text-transform: uppercase;">
+                The ultimate Atlanta Talent Marketplace 
+            </h4>
         </div>
     </div>
 </section>
-
-
   <section class="container-fluid" style="padding: 33px 0 !important" >
     <div class="row justify-content-center ">
         <div class="col-md-2">
-            <div class="card">
+            <div class="card-design shadow-lg ">
                 <img src="assets/images/Layer 8.png" alt="Actors" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title" style="margin-bottom: 10px !important;">Actors</h5>
-                    <a href="#" class="btn btn-view-profile">View Profile</a>
+                    <h5 class="card-title" style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px;">Actors</h5>
+                    <a href="#" class="btn-card">View Profile</a>
                 </div>
             </div>
         </div>
         <div class="col-md-2">
-            <div class="card">
-                <img src="assets/images/Layer 3.png" alt="Musicians" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title" style="margin-bottom: 10px !important;">Musicians</h5>
-                    <a href="#" class="btn btn-view-profile">View Profile</a>
+            <div class="card-design shadow-lg ">
+                <img src="assets/images/Layer 3.png" alt="Musicians" class="card-img-top" >
+                <div class="card-body text-center">
+                    <h4 class="card-title fw-bold" style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px;">Talented Musicians</h4>
+                    <a href="#" class="btn-card" >
+                        View Profile
+                    </a>
                 </div>
             </div>
         </div>
         <div class="col-md-2">
-            <div class="card">
+            <div class="card-design shadow-lg ">
                 <img src="assets/images/model.jpeg" alt="Models" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title" style="margin-bottom: 10px !important;">Models</h5>
-                    <a href="#" class="btn btn-view-profile">View Profile</a>
+                    <h5 class="card-title" style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px;">Models</h5>
+                    <a href="#" class="btn-card">View Profile</a>
                 </div>
             </div>
         </div>
         <div class="col-md-2">
-            <div class="card">
+            <div class="card-design shadow-lg ">
                 <img src="assets/images/Layer 5.png" alt="Authors" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title" style="margin-bottom: 10px !important;">Authors</h5>
-                    <a href="#" class="btn btn-view-profile">View Profile</a>
+                    <h5 class="card-title" style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px;">Authors</h5>
+                    <a href="#" class="btn-card">View Profile</a>
                 </div>
             </div>
         </div>
         <div class="col-md-2">
-            <div class="card">
+            <div class="card-design shadow-lg ">
                 <img src="assets/images/Layer 7.png" alt="Teachers" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title" style="margin-bottom: 10px !important;">Teachers</h5>
-                    <a href="#" class="btn btn-view-profile">View Profile</a>
+                    <h5 class="card-title" style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px;">Teachers</h5>
+                    <a href="#" class="btn-card">View Profile</a>
                 </div>
             </div>
         </div>

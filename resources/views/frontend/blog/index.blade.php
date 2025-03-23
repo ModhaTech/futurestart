@@ -7,6 +7,159 @@
   background-color: lightgray !important; /* Background color on hover */
 }
 
+/* Blog Page Styling */
+.blog-section {
+    padding: 40px 0;
+}
+
+/* Blog Header */
+.blog-header {
+    background: #6a11cb;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Blog Title */
+.blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Guest Post Button */
+.guest-post-btn {
+    background: #ff9800;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    transition: 0.3s;
+}
+
+.guest-post-btn:hover {
+    background: #e68900;
+}
+
+/* Category Dropdown */
+.category-dropdown {
+    margin-bottom: 20px;
+}
+
+.category-dropdown a {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.category-dropdown .dropdown-menu {
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.category-dropdown .dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.active-category {
+    font-weight: bold;
+    color: #6a11cb;
+}
+
+/* Blog Post Styling */
+.blog-post {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.blog-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+/* Author Info */
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.author-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #6a11cb;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.post-date {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Blog Description */
+.blog-description {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Read More Button */
+.read-more-btn {
+    background: #6a11cb;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.read-more-btn:hover {
+    background: #2575fc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-post {
+        flex-direction: column;
+    }
+
+    .blog-img img {
+        height: 200px;
+    }
+
+    .blog-content {
+        padding: 15px;
+    }
+
+    .blog-title {
+        font-size: 20px;
+    }
+}
+
 
 </style>
 <!-- banner start -->
@@ -30,7 +183,7 @@
 		<div class="row">
 			<main class="col-md-12 blog-sectionss" style="margin-bottom: -40px;">
 				<div class="col-md-8 col-sm-8 col-xs-12 blog-post-content blog-first-sec margin-10px-bottom xs-margin-10px-bottom xs-text-center">
-				  <h1   class="text-extra-dark-gray text-uppercase alt-font text-large font-weight-600 margin-15px-bottom display-block"> Latest Blogs {{$catid->name ?? ''}}</h1>
+				  <h1   class="text-extra-dark-gray text-uppercase alt-font text-large font-weight-600 margin-15px-bottom display-block"> Latest Blogs11 {{$catid->name ?? ''}}</h1>
 			    </div>
 			    <div class="col-md-4 col-sm-4 col-xs-12 blog-post-content blog-first-sec margin-10px-bottom xs-margin-10px-bottom xs-text-center">
 					
