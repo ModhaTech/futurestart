@@ -1407,7 +1407,9 @@ p {
     margin-top: 36px !important;
     margin-bottom: 16px !important;
 }
-
+.margin-top{
+    margin-top:20px
+}
 .no_product_img{
     display: flex;
         justify-content: center;
@@ -1489,6 +1491,21 @@ span.line-design{
     margin: 5px auto 0;
     margin-top: 12px;
     margin-bottom: 12px;
+}
+.blogpost{
+    border: 1px solid #ccc;
+    color: #6f6f6f91;
+    cursor: pointer;
+    width: 96%;
+    line-height: 22px;
+    padding: 11px;
+    border-radius: 5px;
+}
+.icon-images{
+    background: black;
+    border-radius: 50%;
+    width: 51px;
+    height: 51px;
 }
 
 @media (min-width: 768px) {
@@ -3331,6 +3348,7 @@ textarea.input-lg {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    border-radius: 5px;
 }
 .btn.active.focus,
 .btn.active:focus,
@@ -4628,6 +4646,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
     line-height: 20px;
 }
 @media (max-width: 767px) {
+    .seller-graph-sec h1, .seller-graph-sec h4 {
+        font-size: 25px;
+        margin: 0 0 0px;
+        margin-top: 41px!important;
+    }
     .navbar-nav .open .dropdown-menu {
         position: static;
         float: none;
@@ -7370,7 +7393,7 @@ span#cred_error {
     font-weight: 500;
 }
 .dash-heading.colorClass h3 {
-    color: #000 !important;
+    color: #b43e38 !important;
 }
 .scroll-top-arrow {
     background: #b43e38 !important;
@@ -12310,7 +12333,7 @@ li.search-results-items.seller-search.col-sm-12 .search-result-counts img {
     /* margin-bottom: -4px; */
 }
 .fa-icon-font {
-    width: 25px;
+    width: 47px;
     color: #fff;
 }
 .input-group-addon {
@@ -13439,6 +13462,7 @@ section {
     position: relative;
     overflow: hidden;
     margin-bottom: 15px !important;
+    margin-top: 14px;
 }
 .aside-title span {
     display: inline-block;
@@ -13449,11 +13473,12 @@ section {
 .aside-title:after {
     content: "";
     display: inline-block;
-    width: 100%;
-    background: #ff214f;
-    height: 1px;
-    top: 70%;
+    width: 32%;
+    /* background: #ff214f; */
+    height: 3px;
+    top: 49%;
     position: absolute;
+    background: linear-gradient(45deg, #b43e38, #dcc136);
 }
 .parallax {
     position: relative;
@@ -15167,8 +15192,8 @@ a.navbar-brand {
 }
 ul.dropdown-menu.seller-menu.show {
     position: absolute;
-    right: 255px;
-    top: 90px;
+    right: 179px;
+    top: 60px !important;
 }
 .required:after {
     content: "*";
@@ -16330,6 +16355,7 @@ body.star-search-detail-page {
     text-overflow: ellipsis;
     width: auto;
     max-width: 100%;
+    margin-top: 4px;
 }
 .pagination > li > span {
     color: grey;
@@ -21126,11 +21152,6 @@ nav.navbar.navbar-inverse.fixed-top {
 
 }
 
-ul.dropdown-menu.seller-menu.show {
-
-    top: 65px !important;
-
-}
 
 section {
 
@@ -21389,7 +21410,7 @@ section {
 .sidebar-nav li a img {
 
     margin: 0;
-
+    width: 12%;
     padding: 0 20px 0 0;
 
 }
@@ -21713,41 +21734,25 @@ button.close {
 }
 
 .buzz-middle.new .dash-heading {
-
     box-shadow: none;
-
     background: #000;
 
 }
 
 .sidebar-nav li a:hover {
-
     color: #000;
-
 }
 
 .dash-heading h3 {
-
     padding: 15px;
-
-    margin: 0;
-
-    text-transform: uppercase;
-
     background: #e1e1e1;
-
-    font-size: 24px;
-
-    color: #000;
-
+    font-size: 19px;
     font-weight: 600;
-
+    line-height: 24px;
 }
 
 .message-box.align-sec h3 {
-
     text-transform: capitalize;
-
 }
 
 .buzz-middle.new h1,
@@ -21765,13 +21770,11 @@ button.close {
 }
 
 .listing-buzz {
-
     background: #fff;
-
+    border-radius: 10px;
     font-size: 21px;
-
+    margin-bottom: 13px;
     font-weight: 500;
-
 }
 
 .main-sec-listinhg {
@@ -21891,15 +21894,11 @@ button.close {
 }
 
 .buzz-middle.new {
-
     background: #000;
-
     border-radius: 10px 10px 0 0;
-
     box-shadow: 1px 2px 10px 0 rgba(19, 18, 18, 0.2);
-
     display: block;
-
+    border-radius: 8px;
     height: max-content;
 
 }
@@ -22789,13 +22788,18 @@ input[type="radio"] {
 }
 
 @media only screen and (max-width: 400px) and (min-width: 320px) {
-
-    .buzz-middle.new {
-
-        margin: 15px 15px 15px 15px !important;
-
+    .knowledge-section {
+        margin: 50px 0px !important;
     }
 
+    .buzz-middle.new {
+        margin-top: 20px !important;
+    }
+    .sidebar-nav li a img {
+        margin: 0;
+        width: 8%;
+        padding: 0 20px 0 0;
+    }
     .register-container .buyer-register button.btn.btn-danger.btn-lg {
 
         word-break: break-word;
@@ -26933,9 +26937,7 @@ span.file-input {
 
 .talent-mall-ban .text-uppercase.alt-font.text-extra-dark-gray.margin-20px-bottom.font-weight-700.sm-width-100.xs-width-100.fnd-tlt-hr {
 
-    text-align: right;
-
-    padding-right: 13%;
+    text-align: center;
 
 }
 
@@ -27685,9 +27687,6 @@ h6 {
 }
 section.buyer-con-section {
     padding-top: 30px !important;
-    padding-bottom: 60px!important;
-    padding-right: 30px!important;
-    padding-left: 30px !important;
     background: #fffcf3;
 }
 .buyer-acont img {
@@ -28031,6 +28030,13 @@ button.close {
 .pagination-n {
     width: 100%;
     margin: 0;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex
+;
+    margin-bottom: 14px;
 }
 .modal-footer.sec-btn {
     text-align: center;
@@ -28366,7 +28372,7 @@ input:checked + .slider:before {
 .seller-graph-sec h1,
 .seller-graph-sec h4 {
     font-size: 25px;
-    margin: 0 0 30px;
+    margin: 0 0 16px;
 }
 .dash-box-sec.commercila .img-box img {
     width: 69%;

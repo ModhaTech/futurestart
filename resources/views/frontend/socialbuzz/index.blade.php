@@ -76,11 +76,12 @@
                      <li class="<?php if($category->id == $categorySelect){ echo 'active'; }?>">
                         <a href="{{ url('/social-buzz/'.$category->slug)}}">
                            <div class="row">
-                              <div class="col-md-3">
+                              <div class="col-md-12">
                                  <img style="padding: 0 5px 0 0;" src="{{ asset('assets/'.$category->tarending_catagory_sidebar_icon )}}" alt="{{$category->category_alt_social_buzz}}">
+                                 {{ $category->name }}
                               </div>
                               <div class="col-md-9">
-                                 {{ $category->name }}
+                                
                               </div>
                            </div>
                        <!--  <img src="{{ asset('assets/'.$category->tarending_catagory_sidebar_icon )}}" alt="{{$category->category_alt_social_buzz}}"> <h4>{{ $category->name }}</h4> -->
@@ -100,16 +101,16 @@
             </div>
             <div class="listing-buzz row">
                <div class="col-md-12">
-                  <div class="main-sec-listinhg" style="padding: 20px;">
+                  <div class="main-sec-listinhg" style="padding: 20px; display:flex;">
                       {{-- Add New code for post --}}
                     
                           @if(!empty(Auth::user()->profile_pic) && file_exists(Auth::user()->profile_pic))
                           <img class="fa-icon-font" src="{{asset(Auth::user()->profile_pic)}}" alt="star icon" style="border-radius: 50%; height: 51px; width:51px; padding: 0px 0px 0px 0;object-fit: cover;">
                           @else
-                          <img style="background: black;border-radius: 50%; width: 51px; height: 51px;" class="fa-icon-font" src="{{asset('assets/images/fstarr-logo.png')}}" alt="starsearch icon">
+                          <img  class="icon-images fa-icon-font" src="{{asset('assets/images/fstarr-logo.png')}}" alt="starsearch icon">
                           @endif
                           &nbsp;
-                         <span style="border: 1px solid #ccc;color:#6f6f6f91;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;border-radius: 10px;padding-right: 404px; cursor: pointer;" data-toggle="modal" data-target="#blogpostModal">Start a post</span>
+                         <div class="blogpost" data-toggle="modal" data-target="#blogpostModal">Start a post</div>
                       {{-- Add New code for post --}}
                   </div>
                 <div id="social-buzz-list">
@@ -716,10 +717,10 @@
                   @endif
                   </div>           
                </div>
-               <div class="pagination-n" style="margin: 5px 0px 5px 15pc !important;">
+               <div class="pagination-n">
                   <!-- Pagination links goes here --->
                   @if($socialBuzzCount > 10)
-                  <a href="javascript:void(0);" id="{{ $socialbuzzList->id }}" class="show_more btn btn-success text-center" title="Load more posts" data-category="{{ $categoryInfo->id }}">Show more</a>
+                  <a href="javascript:void(0);" id="{{ $socialbuzzList->id }}" class="show_more btn text-center" style="background:#b43e38;border-radius: 6px;color: #fff"  title="Load more posts" data-category="{{ $categoryInfo->id }}">Show more</a>
 
                   <span class="loding btn btn-success text-center" style="display: none;">
                      <span class="loding_txt">Loading...</span>
