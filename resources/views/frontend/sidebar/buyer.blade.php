@@ -79,7 +79,7 @@
 
     <a class="custom-button">
       <i class="fa fa-shopping-cart"></i>
-      <span>PurchasesCC (${{ buyerTotalPurchase(Auth::user()->id) }})</span>
+      <span>Purchases (${{ buyerTotalPurchase(Auth::user()->id) }})</span>
   </a>
   
   <!-- Riders Button -->

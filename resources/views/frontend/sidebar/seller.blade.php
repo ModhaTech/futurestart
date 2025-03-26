@@ -35,13 +35,13 @@
     </a>
     
     <!-- Riders Button -->
-    <a class="custom-button" data-toggle="modal" data-target="#exampleModalLong">
+    <a class="custom-button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
         <i class="fa fa-users"></i>
         <span>Riders ( {{ count(riders(!empty(Auth::check()) ? Auth::user()->id : '') ) }} )</span>
     </a>
-    
+  
     <!-- Following Button -->
-    <a class="custom-button" data-toggle="modal" data-target="#user-rider">
+    <a class="custom-button"data-bs-toggle="modal" data-bs-target="#followingmodal">
         <i class="fa fa-user-plus"></i>
         <span>Following ( {{ count(following(!empty(Auth::check()) ? Auth::user()->id : '') ) }} )</span>
     </a>

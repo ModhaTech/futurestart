@@ -1,15 +1,13 @@
 @php  $riders = riders(!empty(Auth::check()) ? Auth::user()->id : '')  @endphp
-<div class="modal fade riders-list" id="exampleModalLong" tabindex="-1" role="dialog" >
-   <div class="modal-dialog" role="document">
-      <div class="modal-content" style="height:500px !important;">
-         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            X
-            </button>
-            <h4 class="modal-title">Riders ({{ count($riders) }})</h4>
-         </div>
-         <div class="modal-body">
-		 
+ <!-- Modal -->
+ <div class="modal fade riders-list" id="exampleModal" data-bs-backdrop="static"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Riders ({{ count($riders) }})</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
 			<div class="container">		 
 				<div class="row">
 					@if(count($riders) > 0)
@@ -48,20 +46,161 @@
 						
 			   @endforeach
 			   @else 
-			        <h4 style="padding-left: 14.5pc; padding-top: 10pc; font-size: 40px;" class="text-center text-danger">No Riders yet!</h4>
+			   <div class="mb-5">
+				<img src="/assets/images/No_data.png" alt="No Data">
+				<h4 class="text-center text-danger">No Riders yet!</h4>
+			   </div>
+			        
                @endif
      
 		  </div>
 		</div>
+		{{-- <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		</div> --}}
+	  </div>
+	</div>
+  </div>
+         </div>
+
+
+{{-- //////////// FOLLOWING MODAL START /////////////////// --}}
+
+
+@php  $following = following(!empty(Auth::check()) ? Auth::user()->id : '')  @endphp
+
+  <!-- Following Modal -->
+  <div class="modal fade" id="followingmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="followingmodalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="followingmodalLabel">Following ({{ count($following) }})</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		    <div class="row">
+				@if(count($following) > 0 )
+					 @foreach($following as $value)
+	 
+						 @if($value->role == 'seller')
+							   @php $profile_link = route('seller-public-profile', $value->public_profile ) @endphp
+	 
+							@elseif($value->role == 'buyer')
+	 
+							   @php $profile_link = route('buyer-public-profile', $value->public_profile ) @endphp
+							   
+							@else 
+							   @php $profile_link = 'javascript:void(0)' @endphp
+						 @endif
+						 <div class="rider-main-block pop-bg">
+							 <div class="avatar-seller-rider">
+								 <a href="{{ $profile_link }}" target="_blank"> 
+									 <img class="rounded-circle" width="50px" src="{{ !empty($value->profile_pic) && file_exists($value->profile_pic) ? asset($value->profile_pic) : url('assets/images/star-logo.png') }}" data-holder-rendered="true">
+								 </a> 
+							 </div>
+							 <div class="name-seller-rider">
+							   <p class="popup-name" href="#">
+										  <p>{{ $value->first_name ?: ''}}&nbsp;{{ $value->last_name ?: ''}}</p>
+										 </p>
+							 </div>
+							 <div class="seller-buyer buyer">
+							   <p type="text" style="color: white; text-transform: uppercase; font-weight: bold;" href="#">{{ $value->role }}</p>
+							 </div>
+							 <div class="following-btn">
+							   <a style="background:green;" type="button" class="btn btn-info" href="javascript:void(0)" id="un-follow-{{ Crypt::encryptString($value->user_id)}}" data-toggle="tooltip" data-placement="top" title="unfollow" data-url="{{ route('unfollow.user', [Crypt::encryptString($value->user_id), Crypt::encryptString(Auth::user()->id ) ] ) }}">Following</a>
+							 </div>
+						 </div>
+					 @endforeach
+					 @else
+					 <div class="mb-5">
+						<img src="/assets/images/No_data.png" alt="No Data">
+						<h4 class="text-center text-danger">You are not following anyone yet!</h4>
+					   </div>
+				 @endif
+		  
+			   </div>
+		</div>
+		{{-- <div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Understood</button>
+		</div> --}}
+	  </div>
+	</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade riders-list" id="user-rider" tabindex="-1" role="dialog" >
+   <div class="modal-dialog" role="document">
+      <div class="modal-content" style="height:500px !important;">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            X
+            </button>
+            <h4 class="modal-title">Following ({{ count($following) }})</h4>
+         </div>
+         <div class="modal-body">
 		 
+		  <div class="container">		 
+		  <div class="row">
+		   @if(count($following) > 0 )
+                @foreach($following as $value)
+
+                    @if($value->role == 'seller')
+                          @php $profile_link = route('seller-public-profile', $value->public_profile ) @endphp
+
+                       @elseif($value->role == 'buyer')
+
+                          @php $profile_link = route('buyer-public-profile', $value->public_profile ) @endphp
+                          
+                       @else 
+                          @php $profile_link = 'javascript:void(0)' @endphp
+                    @endif
+					<div class="rider-main-block pop-bg">
+						<div class="avatar-seller-rider">
+						    <a href="{{ $profile_link }}" target="_blank"> 
+								<img class="rounded-circle" width="50px" src="{{ !empty($value->profile_pic) && file_exists($value->profile_pic) ? asset($value->profile_pic) : url('assets/images/star-logo.png') }}" data-holder-rendered="true">
+							</a> 
+						</div>
+						<div class="name-seller-rider">
+						  <p class="popup-name" href="#">
+									 <p>{{ $value->first_name ?: ''}}&nbsp;{{ $value->last_name ?: ''}}</p>
+									</p>
+						</div>
+						<div class="seller-buyer buyer">
+						  <p type="text" style="color: white; text-transform: uppercase; font-weight: bold;" href="#">{{ $value->role }}</p>
+						</div>
+						<div class="following-btn">
+						  <a style="background:green;" type="button" class="btn btn-info" href="javascript:void(0)" id="un-follow-{{ Crypt::encryptString($value->user_id)}}" data-toggle="tooltip" data-placement="top" title="unfollow" data-url="{{ route('unfollow.user', [Crypt::encryptString($value->user_id), Crypt::encryptString(Auth::user()->id ) ] ) }}">Following</a>
+						</div>
+					</div>
+			    @endforeach
+			    @else
+			    <h4 style="padding-left: 6pc; padding-top: 10pc; font-size: 40px;" class="text-danger text-center">You are not following anyone yet!</h4>
+            @endif
+     
+		  </div>
+		</div>
          </div>
          <div class="modal-footer">
             <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button> -->
+               <button type="button" class="btn btn-primary">Save changes</button> -->
          </div>
       </div>
    </div>
 </div>
+
+
+
+		 
 <style>
 .modal-body{overflow:auto;}
    .rider-main-block {
@@ -173,65 +312,5 @@
 }
 </style>
 
-@php  $following = following(!empty(Auth::check()) ? Auth::user()->id : '')  @endphp
 
-<div class="modal fade riders-list" id="user-rider" tabindex="-1" role="dialog" >
-   <div class="modal-dialog" role="document">
-      <div class="modal-content" style="height:500px !important;">
-         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            X
-            </button>
-            <h4 class="modal-title">Following ({{ count($following) }})</h4>
-         </div>
-         <div class="modal-body">
-		 
-		  <div class="container">		 
-		  <div class="row">
-		   @if(count($following) > 0 )
-                @foreach($following as $value)
-
-                    @if($value->role == 'seller')
-                          @php $profile_link = route('seller-public-profile', $value->public_profile ) @endphp
-
-                       @elseif($value->role == 'buyer')
-
-                          @php $profile_link = route('buyer-public-profile', $value->public_profile ) @endphp
-                          
-                       @else 
-                          @php $profile_link = 'javascript:void(0)' @endphp
-                    @endif
-					<div class="rider-main-block pop-bg">
-						<div class="avatar-seller-rider">
-						    <a href="{{ $profile_link }}" target="_blank"> 
-								<img class="rounded-circle" width="50px" src="{{ !empty($value->profile_pic) && file_exists($value->profile_pic) ? asset($value->profile_pic) : url('assets/images/star-logo.png') }}" data-holder-rendered="true">
-							</a> 
-						</div>
-						<div class="name-seller-rider">
-						  <p class="popup-name" href="#">
-									 <p>{{ $value->first_name ?: ''}}&nbsp;{{ $value->last_name ?: ''}}</p>
-									</p>
-						</div>
-						<div class="seller-buyer buyer">
-						  <p type="text" style="color: white; text-transform: uppercase; font-weight: bold;" href="#">{{ $value->role }}</p>
-						</div>
-						<div class="following-btn">
-						  <a style="background:green;" type="button" class="btn btn-info" href="javascript:void(0)" id="un-follow-{{ Crypt::encryptString($value->user_id)}}" data-toggle="tooltip" data-placement="top" title="unfollow" data-url="{{ route('unfollow.user', [Crypt::encryptString($value->user_id), Crypt::encryptString(Auth::user()->id ) ] ) }}">Following</a>
-						</div>
-					</div>
-			    @endforeach
-			    @else
-			    <h4 style="padding-left: 6pc; padding-top: 10pc; font-size: 40px;" class="text-danger text-center">You are not following anyone yet!</h4>
-            @endif
-     
-		  </div>
-		</div>
-         </div>
-         <div class="modal-footer">
-            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary">Save changes</button> -->
-         </div>
-      </div>
-   </div>
-</div>
 

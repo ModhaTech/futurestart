@@ -11,6 +11,7 @@
         "php": "^7.4.33|^8.1",
         "abraham/twitteroauth": "^2.0",
         "alexusmai/laravel-file-manager": "^2.5",
+        "beyondcode/laravel-websockets": "^2.0@beta",
         "braintree/braintree_php": "6.3.0",
         "darkaonline/l5-swagger": "^8.0",
         "fideloper/proxy": "^4.4",

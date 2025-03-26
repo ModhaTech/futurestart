@@ -57,7 +57,7 @@
     </body>
 
 <script type="text/javascript">
-    const webSocketstreamlive = new WebSocket("wss://futurestarr.com:3002");
+    const webSocketstreamlive = new WebSocket("ws://127.0.0.1:6001");
 
     webSocketstreamlive.onmessage = (event) => {
         handleSignallingDataLiveStream(JSON.parse(event.data));
@@ -112,9 +112,18 @@
         $.ajax({
             url: '{!! route('livestream.live-page-store-data') !!}',
             type: 'POST',
-            data: { "_token": "{{ csrf_token() }}", "stream_id": stream_id, "type": "online", "status": '1' },
-            success: function(response) { console.log('Live stream started', response); },
-            error: function(error) { console.log('Error', error); }
+            data: { 
+                "_token": "{{ csrf_token() }}",  // Ensure this is correctly included
+                "stream_id": stream_id, 
+                "type": "online", 
+                "status": '1' 
+            },
+            success: function(response) { 
+                console.log('Live stream started', response); 
+            },
+            error: function(error) { 
+                console.log('Error', error); 
+            }
         });
     }
 
