@@ -683,23 +683,45 @@
 </style>
 <div class="home">
       <section class="p-0 parallax mobile-height wow fadeIn hpfs01" data-stellar-background-ratio="0.5">
-          <div class="container card-container">
-        <div class="custom-card">
+          <div class="container" style="display: flex; justify-content: center;">
+        {{-- <div class="custom-card">
             <div class="card-body hh34">
-                {{-- <h2 class="future_tittle">FUTURESTARR</h2> --}}
-                {{-- <h6  class="textcard">The Ultimate Talent Marketplace</h6> --}}
+                <h2 class="future_tittle">FUTURESTARR</h2>
+                <h6  class="textcard">The Ultimate Talent Marketplace</h6>
                 <div class="search-container">
                     <input class="mb-0 bg-search-theme-light text-dark" name="name" id="search" placeholder="Search" type="text" autocomplete="off">
                     <i class="fa fa-search" aria-hidden="true"></i>
                      <ul class="search-results list-unstyled"></ul>
                 </div>
                  @if (Auth::guest())
-                   <a href="{{ route('register') }}" class="btn-link">sign-up</a>
+                   <a href="{{ route('register') }}" class="btn-link">sign-up11</a>
                 <a href="javascript:void(0)" data-toggle="modal" data-target="#login" class="btn-link">sign-in</a>
               
                 @endif
             </div>
+        </div> --}}
+<div>
+    <div class="polygon-box">
+        <div class="text-container">
+            <h1>Future <span style=" color:#ffc023">Starr</span> </h1>
+            <p>The Ultimate Talent Marketplace</p>
         </div>
+    </div>
+
+    @if (Auth::guest())
+        <!-- Buttons with Polygon Shape -->
+        <div class="button-container margin-button">
+            <a href="{{ route('register') }}">
+                <button class="btn signup-btn">Sign Up</button>
+            </a>
+            <a href="javascript:void(0)" data-toggle="modal" data-target="#login">
+                <button class="btn signin-btn">Sign In</button>
+            </a>
+        </div>
+    @endif
+</div>
+       
+
           </div>
 </section>
 

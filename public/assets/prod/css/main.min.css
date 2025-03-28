@@ -1513,6 +1513,148 @@ span.line-design{
     color: #ff503f;
 }
 
+/* 
+
+        .modal h1 {
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffcc00;
+        }
+
+        .modal p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .signup-btn {
+            background-color: #33b5e5;
+            color: white;
+        }
+
+        .signin-btn {
+            background-color: #ff8800;
+            color: white;
+        }
+
+        .signup-btn:hover {
+            background-color: #0099cc;
+        }
+
+        .signin-btn:hover {
+            background-color: #cc6600;
+        }
+
+
+        .custom-card {
+            background-color: rgb(0, 0, 0) !important;
+            color: white !important;
+            height: 250px;
+            padding: 25px;
+            max-width: 49% !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            border-radius: 20px !important;
+            margin-top: 120px;
+            position: relative;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+            clip-path: polygon(0 30%, 100% 0%, 100% 39%, 0 70%);
+        } */
+
+
+        /* Polygon Container */
+        .polygon-box {
+            width: 450px;
+            height: 246px;
+            background: #000;
+            clip-path: polygon(0 44%, 100% 0%, 100% 56%, 0 100%);
+            display: flex
+        ;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Tilted Text Container */
+        .text-container {
+            text-align: center;
+            transform: rotate(-14deg); /* Tilts the text */
+        }
+
+        .text-container h1 {
+            color: #fff;
+            font-size: 51px;
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        /* Subheading */
+        .text-container p {
+            font-size: 18px !important;
+            font-weight: 500;
+            color: #fff!important;
+            text-transform: uppercase;
+            line-height: 36px;
+        }
+        
+
+        button.btn.signup-btn {
+            background: #5db2c3;
+            padding: 28px 54px;
+            font-size: 21px;
+            font-weight: bold;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            clip-path: polygon(0 22%, 100% 16%, 99% 89%, 0 97%);
+            margin-top: -52px;
+            line-height: 27px;
+            transform: rotate(-14deg);
+        }
+
+        button.btn.signin-btn {
+            background: #f2a91c;
+            padding: 28px 54px;
+            font-size: 21px;
+            font-weight: bold;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            clip-path: polygon(0 22%, 100% 16%, 99% 89%, 0 97%);
+            margin-top: -43px;
+            line-height: 27px;
+            transform: rotate(-14deg);
+            margin-top: -159px;
+        }
+        .margin-button{
+            margin-left: 31px;
+        }
+/* Common Button Styles */
+
+
 @media (min-width: 768px) {
     .lead {
         font-size: 21px;
@@ -2760,6 +2902,7 @@ th {
     overflow-x: auto;
 }
 @media screen and (max-width: 767px) {
+
     span.line-break {
         display: contents;
     }
@@ -12481,6 +12624,48 @@ canvas {
     color: #ff503f;
 }
 @media only screen and (max-width: 768px) {
+    .unic1 {
+        margin-top: 24px !important;
+    }
+    .text34 h2 {
+        margin-bottom: 15px !important;
+    }
+    .polygon-box {
+        width: auto !important;
+        height: 200px !important;
+    }
+    .feature-box-content span {
+        margin-top: 20px;
+        font-size: 15px;
+        color: #333;
+        font-weight: 700;
+    }
+    .text-container h1 {
+        font-size: 24px !important;
+    }
+
+    .text-container p {
+        font-size: 10px !important;
+        line-height: 28px !important;
+    }
+
+    button.btn {
+        font-size: 15px !important;
+        padding: 10px 20px !important;
+    }
+    button.btn.signin-btn {
+        margin-top: -140px;
+    }
+    button.btn.signup-btn {
+        margin-top: -135px!important;
+    }
+    .text-container {
+        text-align: center;
+        transform: rotate(-18deg);
+    }
+    .margin-button {
+        margin-left: 17px;
+    }
     .buyer-products,
     .welcome-box {
         box-shadow: -1px 3px 28px -9px #333;

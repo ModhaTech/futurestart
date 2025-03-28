@@ -241,68 +241,68 @@ if(!empty($segment)) { $bodyClass = Request::segment(1); } else { $bodyClass ='h
 
 	@php $registerRoute = Route::currentRouteName() @endphp
 	@if($registerRoute =='register')
-	<meta name="title" content="Sign Up: Earn Income | Buy or Sell Talent From Home">
-	<meta name="description" content="Sign up today! Earn income from your home. Receive high commission pay deposited into your Stripe's merchant account from selling your Talent.">
-	<meta name="keywords" content="Register, sign up, earn income, how to make money on the side, make money collecting, hobbies that make money, commission pay,">
+	<meta name="title" content="Sign Up & Earn Income | Sell Your Talent Online">
+	<meta name="description" content="Join Future Starr today! Sell your talent and earn high commission payments directly into your Stripe account. Work from home and start earning now!">
+	<meta name="keywords" content="sign up, earn money online, sell your talent, work from home, passive income, high commission pay, make money from hobbies, online marketplace">
 	<meta charset="utf-8" name="google-site-verification" content="oyw7CbWFqAYVXogBH2hIOFvTZD58CIU3xqatT70VVe0">
 	<meta name="seobility" content="525cf60fddc61098d6209176d70a48ce">
 	@elseif($registerRoute =='about-us')
-	<meta name="title" content="The Road to Success | Future Starr">
-	<meta name="description" content="To be successful: The road to success does not happen overnight! You must be passionate and ready to make sacrifices to achieve what you want.">
-	<meta name="keywords" content="road to success, secret of my success, standard for success, about us, about Future Starr, critical factor success, success of the new deal, success by health, symbol of success, key success factors, connections to success,">
+	<meta name="title" content="Our Journey to Success | About Future Starr">
+	<meta name="description" content="Success takes passion, persistence, and sacrifice. Learn how Future Starr helps talents grow and achieve their dreams.">
+	<meta name="keywords" content="success journey, about Future Starr, passion and persistence, achieve dreams, key success factors, business success, growth strategy">
 	@elseif($registerRoute =='term-conditions')
-	<meta name="title" content="Terms and Conditions | Future Starr">
-	<meta name="description" content="At Future Starr, we collect and manage user data according to the following Privacy Policy, with the goal of incorporating our company values.">
-	<meta name="keywords" content="Terms and conditions, terms and conditions at Future Starr, terms and conditions on website, terms and conditions definition, terms and conditions may apply summary,">
+	<meta name="title" content="Terms & Conditions | Future Starr Policies">
+	<meta name="description" content="Read our Terms and Conditions to understand how we collect, manage, and protect user data at Future Starr.">
+	<meta name="keywords" content="terms and conditions, user agreement, website policies, Future Starr terms, legal agreements, data privacy">
 	@elseif($registerRoute =='refund-policy')
-	<meta name="title" content="Refund Policy | Future Starr">
-	<meta name="description" content="Welcome to Future Starr's refund policy section. Our mission at FutureStarr is to ensure you are completely satisfied. Read more about our refund policy.">
-	<meta name="keywords" content="refund policy of Future Starr, refund policy at Future Starr, refund policy, customer service, satisfaction, quality service, happy customers. satisfied customers,">
+	<meta name="title" content="Refund Policy | Customer Satisfaction at Future Starr">
+	<meta name="description" content="Your satisfaction matters! Learn about Future Starr's refund policy and how we ensure quality service and happy customers.">
+	<meta name="keywords" content="refund policy, customer satisfaction, return policy, Future Starr refunds, money-back guarantee, service quality">
 	@elseif($registerRoute =='privacy-policy')
-	<meta name="title" content="Privacy Policy | Future Starr">
-	<meta name="description" content="Read our privacy policy online. This Privacy Policy explains how Future Starr collects, uses, stores, and discloses information.">
-	<meta name="keywords" content="privacy policy, privacy policy at Future Starr, Future Starr privacy policy, privacy policy update,">
+	<meta name="title" content="Privacy Policy | How Future Starr Protects Your Data">
+	<meta name="description" content="Understand how Future Starr collects, uses, and protects your personal information in our Privacy Policy. Read more here.">
+	<meta name="keywords" content="privacy policy, data protection, Future Starr privacy, personal data security, online privacy policy, information security">
 	@elseif($registerRoute == 'talent.index')
-	<meta name="title" content="Talent Mall | Return on Sales | Ideas For Talent Show">
-	<meta name="description" content="Future Starr online Talent Mall was discovered in Atlanta! Browse and Purchase some of the hottest undiscovered talents across the globe.">
-	<meta name="keywords" content="biggest malls in america, largest malls in the world, largest malls in us, star shopping, where can I purchase, define purchase, underground rapper, atlanta underground mall, underground tattooing, hiphop undergound, undiscovered,">
+	<meta name="title" content="Discover & Shop Talent | Future Starr Talent Mall">
+	<meta name="description" content="Explore undiscovered talent at Future Starr’s online Talent Mall! Buy and sell creative skills, music, art, and more worldwide.">
+	<meta name="keywords" content="talent marketplace, buy and sell talent, undiscovered artists, creative skills, online shopping for talent, independent artists, underground talent">
 	@elseif(Request::is('social-buzz/*'))
 	@php
 	$social_desc = [
-	1 => "Book Authors: Unleash the full potential of drawing an audience of buyers who is ready to purchase on Future Starr's social buzz page.",
-	2 => "Are you in search of new entertainers asking them to entertain me? Future Starr's unique social buzz outlet help to connect with passionate entertainers.",
-	4 => "Global Music Promotion: To underground artist trying to get their music out. Future Starr social buzz page has a community of music riders ready.",
-	5 => "Future Starr has a place for photographers from across the globe who has a database full of professional photography for sale globally.",
-	6 => "Comedy for sale: Locate the best undiscovered comedy videos here on Future Starr. Use our social buzz to begin promoting and selling your comedy talent.",
-	7 => "Casting call for premier model entrepreneurs: Chocolate models, Asian models, hot bikini models, Japanese models, etc. Utilize Social Buzz to network.",
-	8 => "Fitness Gurus: Do Fitness your way. Establish a new realm of riders ready to ride with you and support your fitness achievements by joining Future Starr.",
-	9 => "Future Starr social buzz is the new hot zone for the national geographic society to promote and sell their knowledge and expertise. Start up a discussion about your national geographic photo of the day. ",
-	10 => "Science includes fair ideas for local schools and colleges. Future Starr social buzz page provides an outlet for science geniuses.",
-	11 => "Future Starr has an online community of buyers that's ready to support and purchase your food expertise. Start socializing on Future Starr today!",
-	12 => "Future Starr Social buzz page gives nutritionists a way to discuss and sell on topics on nutrition. Nutrition should be a habit in our daily lives.",
-	13 => "Mathematic jobs are the past, present, and future.The Social Buzz platform allows math teachers to become entrepreneurs by selling their math online.",
-	14 => "Global cosmetic interns and professionals: Create a new fan base stream through Future Starr social buzz page to promote or sell to cosmetics consumers.",
-	15 => "The next American fashion designer star may not get discovered on Facebook, Instagram, or YouTube. The next star will appear right on Future Starr.",
-	16 => "Tattoos and Tattoo's ideas are a true representation of a person's artistic side. Why not see if you can sell your tattoo ideas to our community?"
-	]
+    1 => "Book Authors: Maximize your reach and attract ready-to-buy readers on Future Starr's Social Buzz page.",
+    2 => "Looking for fresh entertainment? Connect with passionate entertainers on Future Starr’s unique Social Buzz platform.",
+    4 => "Global Music Promotion: Underground artists, showcase your music to an engaged community of music lovers on Future Starr.",
+    5 => "Calling all photographers! Sell your professional photography to a global audience through Future Starr's Social Buzz.",
+    6 => "Comedy for Sale: Discover and promote the best undiscovered comedy videos. Start selling your talent on Future Starr today!",
+    7 => "Casting Calls for Aspiring Models: Chocolate models, Asian models, bikini models, and more—network and showcase your talent on Social Buzz.",
+    8 => "Fitness Gurus: Build your fitness brand and connect with a dedicated community that supports your health journey on Future Starr.",
+    9 => "The Social Buzz page is a hotspot for National Geographic enthusiasts to promote, discuss, and sell their expertise and photography.",
+    10 => "Science Fair Ideas & Innovation: Share and sell your groundbreaking science projects with local schools and colleges via Social Buzz.",
+    11 => "Food Experts & Chefs: Promote and sell your culinary expertise to a community of buyers eager to support your passion on Future Starr.",
+    12 => "Nutritionists: Engage, educate, and sell nutrition plans or consultations through Future Starr's Social Buzz platform.",
+    13 => "Math Entrepreneurs: Turn your math expertise into income by selling educational resources and tutoring on Social Buzz.",
+    14 => "Cosmetic Professionals: Build your brand, gain a loyal fanbase, and promote your beauty products through Future Starr.",
+    15 => "The next big American fashion designer might not be discovered on Instagram or YouTube—but right here on Future Starr.",
+    16 => "Tattoos & Design Ideas: Express your artistry and sell your unique tattoo designs to an engaged creative community on Future Starr."
+	];
 	@endphp
 	@php
 	$social_keyword = [
-	1 => "how to promote book, promote myself published book, how to promote book on social media, promote book, sell books comparison site, site book, sell books online, advertise a book poster,",
-	2 => "entertainment promotion, entertainment marketing, are you not entertained, entertain me, entertain persuade inform, entertain an idea,",
-	4 => "now that's what I call music, rate your music, new music releases, music promotion, music riders,",
-	5 => "photography for sale, photography promotion, photography promotion ideas, props for photography for sale, photography ideas, best camera for professional photography,",
-	6 => "salesman comedy, comedy for sale, comedy zone, comedy videos, comedy catch, comedy open mic, comedy jokes, comedy unleashed,",
-	7 => "price is right models, chocolate models, asian models, Japanese models, blackmale models, micro bikini models, underwear models, hot bikini models, plus size lingerie models,",
-	8 => "fitness trainers near me, types of fitness trainers, fitness singles, fitness pal, fitness motivation, fitness your way, fitness evolution, fitness goals, ",
-	9 => "national geographic photographer,national geographic society, national geographic  your shot, national geographic  hot zone, national geographic  photo of the day,",
-	10 => "science revolution, science fair ideas, science experiments for kids, science jokes, science words, science variables, science fiction books,",
-	11 => "food high in protein,  food high in potassium,  food in spanish,  food open,  food high in magnesium,  food network shows,  food recipes,  food and wine",
-	12 => "mushroom nutrition, black beans  nutrition, brussel sprouts  nutrition, salmon  nutrition, green bean  nutrition, shrimp  nutrition, pinto beans  nutrition, oat milk  nutrition, ",
-	13 => "mathematics vision project,  mathematic range, mathematics clipart, mathematic quizzes, mathematics properties, mathematics jobs,",
-	14 => "cosmetic brands,  cosmetics market, it  cosmetics, mented  cosmetics, mac  cosmetics, profussion  cosmetics, fashion fair  cosmetics, jaclyn hill  cosmetics, give me glow  cosmetics, ",
-	15 => "college fashion designer, fashion designer course, fashion designer software, italian fashion designer, new york fashion designer,american fashion designer, fashion designer portfolios,",
-	16 => "Tattoos, Tattoos ideas, Tattoos roses, Tattoos for women, Tattoos for men, Tattoos sleeves, Tattoos on high,"
+	1 => "how to promote a book, promote self-published book, book promotion on social media, sell books online, book advertising strategies, best sites to sell books, book marketing tips,",
+    2 => "entertainment marketing, entertainment promotion strategies, engaging entertainment content, entertain me ideas, entertainment business growth, creative entertainment campaigns,",
+    4 => "top music promotion, discover new music, underground music releases, music marketing strategies, music streaming tips, how to promote your music,",
+    5 => "sell photography online, best sites for photography sales, photography business marketing, professional photography gear, creative photography ideas, props for professional photography,",
+    6 => "comedy promotion, best comedy content, funny video marketing, comedy open mic, stand-up comedy ideas, viral comedy videos, joke writing tips,",
+    7 => "top fashion models, emerging model trends, Asian models, plus-size lingerie models, Japanese models, bikini models, male model industry, modeling career tips,",
+    8 => "find fitness trainers, fitness motivation tips, fitness transformation stories, best fitness plans, fitness training programs, health and wellness coaching,",
+    9 => "National Geographic photography, best nature photographers, wildlife photography tips, National Geographic photo submissions, iconic travel photography,",
+    10 => "science fair project ideas, easy science experiments, science facts for kids, scientific discoveries, science fiction novels, latest science breakthroughs,",
+    11 => "high-protein foods, top potassium-rich foods, best food for energy, healthy food recipes, food trends 2025, nutrition-packed meal ideas,",
+    12 => "nutrition tips, benefits of healthy eating, mushroom nutrition facts, salmon nutrition benefits, best plant-based foods, balanced diet recommendations,",
+    13 => "math education tools, best math learning resources, interactive math quizzes, careers in mathematics, top math skills for jobs, practical math applications,",
+    14 => "trending cosmetic brands, best beauty products, skincare and cosmetics market, professional makeup tips, top-selling beauty products, fashion beauty trends,",
+    15 => "fashion designer career, top fashion design schools, best fashion design software, how to become a fashion designer, successful fashion designer stories,",
+    16 => "tattoo ideas, trending tattoo designs, best tattoos for men, sleeve tattoos, unique tattoo placements, tattoo inspiration, minimalist tattoos,"
 	]
 	@endphp
 	<meta name="title" content="{{$social_title[$categorySelect]}}">
