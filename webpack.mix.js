@@ -64,6 +64,11 @@ mix.styles([
 		// 'public/assets/css/style.min.css',
 		'public/assets/css/buyer-dashboard/style.css',
 	],
-	'public/assets/prod/css/main.min.css').purgeCss({enabled: true,});
+	'public/assets/prod/css/main.min.css').purgeCss({
+			enabled: true,
+		  content: [
+				'./resources/views/**/*.blade.php',
+		  ]
+	});
 
   mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
