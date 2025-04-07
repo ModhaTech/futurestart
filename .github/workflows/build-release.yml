@@ -1,0 +1,69 @@
+name: Build Laravel Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Environment (staging, production)'
+        required: true
+        default: 'staging'
+
+jobs:
+  build:
+    name: Build Laravel App
+    runs-on: ubuntu-latest
+
+    env:
+      APP_ENV: ${{ github.event.inputs.env }}
+      APP_KEY: base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx= # Optional for caching
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🧰 Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, bcmath, pdo, mysql, curl
+          tools: composer:v2
+
+      - name: 🟢 Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 🧱 Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: 📦 Install NPM dependencies
+        run: npm ci
+
+      - name: 🏗 Build Legacy + Vite assets
+        run: |
+          npm run production
+          npm run build:vite
+
+      - name: 🧼 Prepare Laravel build (cache configs etc.)
+        run: |
+          php artisan config:clear
+          php artisan config:cache
+          php artisan view:cache
+
+      - name: 🗂 Structure build artifact
+        run: |
+          mkdir release
+          rsync -av --exclude=node_modules --exclude=.git --exclude=.github --exclude=tests . ./release
+
+      - name: 🗜️ Zip the release
+        run: |
+          BUILD_TIME=$(date +'%Y%m%d-%H%M%S')
+          mv release "release-${BUILD_TIME}"
+          zip -r "release-${BUILD_TIME}.zip" "release-${BUILD_TIME}"
+          echo "RELEASE_FILE=release-${BUILD_TIME}.zip" >> $GITHUB_ENV
+
+      - name: 📤 Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.RELEASE_FILE }}
+          path: ${{ env.RELEASE_FILE }}
