@@ -10,10 +10,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Add only the icons you use for tree-shaking
-import { faUser, faLock, faEye, faEyeSlash, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faLock, faEye, faEyeSlash, faMagnifyingGlass, faRss } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faUser, faLock, faEye, faEyeSlash, faMagnifyingGlass, faFacebookF, faTwitter, faLinkedin)
+library.add(faUser, faLock, faEye, faEyeSlash, faMagnifyingGlass, faFacebookF, faTwitter, faLinkedin, faRss)
 
 createInertiaApp({
 	resolve: name => {
