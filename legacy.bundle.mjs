@@ -58,19 +58,19 @@ fs.writeFileSync(cssOutputPath, legacyCSSOutput)
 
 console.log('🧼 Purging unused CSS from main.min.css')
 
-const result = await postcss([
-	purgecss({
-		content: [
-			'./resources/views/**/*.blade.php',
-			'./resources/js/**/*.vue',
-			'./resources/js/**/*.js',
-		],
-		defaultExtractor: content => content.match(/[\w-/:%]+(?<!:)/g) || [],
-		safelist: ['active', /^show/, /^modal/, /^toast/],
-	}),
-]).process(legacyCSSOutput, { from: undefined })
-
-fs.writeFileSync(cssOutputPath, result.css)
+// const result = await postcss([
+// 	purgecss({
+// 		content: [
+// 			'./resources/views/**/*.blade.php',
+// 			'./resources/js/**/*.vue',
+// 			'./resources/js/**/*.js',
+// 		],
+// 		defaultExtractor: content => content.match(/[\w-/:%]+(?<!:)/g) || [],
+// 		safelist: ['active', /^show/, /^modal/, /^toast/],
+// 	}),
+// ]).process(legacyCSSOutput, { from: undefined })
+//
+// fs.writeFileSync(cssOutputPath, result.css)
 
 console.log('📁 Copying TinyMCE')
 
