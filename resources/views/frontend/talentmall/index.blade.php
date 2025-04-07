@@ -58,8 +58,8 @@
               <a href="{{ route('talent.show',$catagory->slug)}}">
                 <figure>
                   <div class="portfolio-img talent-mall-port">
-                    {{-- <img  title="catagory of futurestarr" src="{{ asset( $catagory->catagory_image_path)}}" alt="{{$catagory->category_alt}}" /> --}}
-                    <img  title="catagory of futurestarr" src="https://www.futurestarr.com/talent-mall-category-gifs/talentmallpage-categ-Entertainment.gif" alt="{{$catagory->category_alt}}" />
+                    <img  title="catagory of futurestarr" src="{{ asset( $catagory->catagory_image_path)}}" alt="{{$catagory->category_alt}}" />
+                    {{-- <img  title="catagory of futurestarr" src="https://www.futurestarr.com/talent-mall-category-gifs/talentmallpage-categ-Entertainment.gif" alt="{{$catagory->category_alt}}" /> --}}
 					  
                     <!-- <img   title="" src="{{asset('assets/images/talent-mall/no_image-200x200.jpg')}}" /> -->
                   </div>

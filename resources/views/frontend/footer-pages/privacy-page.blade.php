@@ -45,7 +45,7 @@
                 </div>
                 <div class="text-justify">
                     <p>
-                        FutureStarr is an online, easy-to-use talent distribution platform based in Atlanta, GA 
+                        FutureStarr is an online, easy-to-use talent distribution platform, GA 
                         where unsigned or undiscovered talent and talent lovers coexist. We have one mission: To give unsigned, undiscovered talent/artists more exposure and connect them with a larger audience of listeners and future fans who want to discover, promote and share their music. For more information about our goals and mission here at FutureStarr, and to read about our Founder and CEO, please visit our <a routerLink="/about-us">About Us page</a>. 
                     </p>
                 </div>

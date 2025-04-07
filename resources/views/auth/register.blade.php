@@ -166,13 +166,16 @@ i.show-pass-con {
 
 i.show-pass {
     position: absolute;
-    top: 8px;
-    right: 20px;
+    top: 12px;
+    right: 35px;
     cursor: pointer;
     font-size: 14px !important;
 }
 
-
+.show-pass-login {
+    top: 12px !important;
+    right: 15px !important;
+}
 
 /*//  style for video pop up*/
 

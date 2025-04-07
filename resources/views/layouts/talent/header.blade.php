@@ -556,7 +556,7 @@
      <div class="modal-content">
       <div class="modal-header clo">
        <button type="button" class="close" data-dismiss="modal">X</button>
-       <p class="modal-title">Login</p>
+       <p class="modal-title login-modal-title">Login</p>
      </div>
      <div class="modal-body lmsbo">
        <div class="">
@@ -572,7 +572,7 @@
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
             <input type="password" class="form-control password" name="password" required placeholder="Password" style="border-radius: 0px 5px 5px 0px;">
-            <i title="Show Password" class="fa fa-eye-slash show-pass" aria-hidden="true"></i>
+            <i title="Show Password" class="fa fa-eye-slash show-pass show-pass-login" aria-hidden="true"></i>
             <span class="invalid-feedback" id="password" role="alert"></span>
           </div>
           <div class="row">
@@ -603,8 +603,8 @@
               </div>
               <div class="col-sm-12" id='loader' style='display: none;'>
                 <button  class="btn btn-primary" type="button" disabled >
-                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                  Just a sec
+                  {{-- <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Just a sec --}}
                 </button>
               </div>
             </div>
@@ -629,7 +629,7 @@
             
           </div>
 
-          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center" style="  background-image: url('assets/images/news-21.png');
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 text-center login-popup-img" style="  background-image: url('assets/images/news-21.png');
           z-index: inherit;
             background-size: cover;
             background-position: center;

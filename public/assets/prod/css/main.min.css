@@ -1433,7 +1433,7 @@ p {
 
 .footer-links a:hover {
     color: #007bff;
-    text-decoration: underline;
+    text-decoration: none !important;
 }
 .main_heading {
     font-size: 50px;
@@ -12624,6 +12624,19 @@ canvas {
     color: #ff503f;
 }
 @media only screen and (max-width: 768px) {
+
+    .login-modal-title {
+        color: white !important;
+        font-size: 20px !important;
+    }
+
+    .clo {
+        border-bottom: none !important;
+    }
+
+    .login-popup-img {
+        display: none !important;
+    }
     .unic1 {
         margin-top: 24px !important;
     }
@@ -12654,10 +12667,10 @@ canvas {
         padding: 10px 20px !important;
     }
     button.btn.signin-btn {
-        margin-top: -140px;
+        margin-top: -170px;
     }
     button.btn.signup-btn {
-        margin-top: -135px!important;
+        margin-top: -110px!important;
     }
     .text-container {
         text-align: center;
@@ -23691,7 +23704,7 @@ h2.username-dd {
 
 }
 
-#loader {
+/* #loader {
 
     display: block;
 
@@ -23719,7 +23732,7 @@ h2.username-dd {
 
     animation: spin 2s linear infinite;
 
-}
+} */
 
 #loader:before {
 
@@ -23771,6 +23784,28 @@ h2.username-dd {
 
     animation: spin 1.5s linear infinite;
 
+}
+#loader {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    animation: spin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @-webkit-keyframes spin {

@@ -283,7 +283,7 @@ i.fa.fa-search {
                  <ul class="search-results list-unstyled"></ul>
             </div>
             <h4 class="text-white mt-3" style="text-transform: uppercase;">
-                The ultimate Atlanta Talent Marketplace 
+                The ultimate Talent Marketplace 
             </h4>
         </div>
     </div>

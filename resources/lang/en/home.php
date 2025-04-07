@@ -15,7 +15,7 @@ return [
 
     'BANNERTITLE'=> 'The Official Talent Market Place',
     'BANNERSUBTITLE' => 'Sell your Talent Free  <i style="position: relative;top: 0em;left:0em;color: white;" class="fa fa-star" aria-hidden="true"></i>  Make Sales  <i style="position: relative;top: 0em;left:0em;color: white;" class="fa fa-star" aria-hidden="true"></i>  Be Your Own Boss',
-    'WHOCHOOSE' => 'Why Chooseeee Future Starr',
+    'WHOCHOOSE' => 'Why Choose Future Starr',
     'TAKECONTROLTITLE' => 'Take Control',
     'TAKECONTROLDESCRIPTION' => 'Turn your <a href="https://www.futurestarr.com/"><strong>Entertainment Career</strong></a> into a profitable business. Whether you’re a novice at your talent or an established star, our power - packed platform will help you to grow.',
     'EXPLORETALENT' => 'Explore Talent',

@@ -52,7 +52,7 @@ if(!empty($segment)) { $bodyClass = Request::segment(1); } else { $bodyClass ='h
     @endphp
     <title>{{$social_title[$categorySelect]}}</title>
 	@elseif(isset($metaTags['title'])) 
-	<title>{{ isset($metaTags['title']) ? $metaTags['title'].' | Future Starr' : '' }}</title>
+	<title>Welcome to FutureStarr: The Ultimate Talent Marketplace | Future Starr</title>
 	@elseif(isset($custom))
 	@foreach($custom as $title)
 	<title> {{$title}} </title>

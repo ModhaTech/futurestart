@@ -825,7 +825,7 @@
                                     <div class="card-body">
                                        <img src="{{ asset('assets/images/new-home/futurestarr_text.svg') }}" alt="FutureStarr" class="card-title" style="height: auto; max-width: 100%;">
 <h4 class="card-text" style="color: white; font-size: 20px!important; line-height: 23px!important;">
-    The ultimate Talent Marketplace for Atlanta hip-hop Artists
+    The ultimate Talent Marketplace for hip-hop Artists
 </h4>
 
                                         <div class="search-container">
@@ -951,7 +951,7 @@
                                         <b>JAZZY B</b>
                                     </p>
                                     <div class="blog-content mt-3">
-                                        <p class="width-90 xs-width-100 color-black mx-auto">An upcoming Atlanta-based
+                                        <p class="width-90 xs-width-100 color-black mx-auto">An upcoming
                                             hip-hop artist who has used FutureStarr to grow her audience and sell her
                                             latest album. Jazzy B is known for her vibrant energy and unique style,
                                             captivating a growing fan base with her powerful performances.</p>
@@ -973,7 +973,7 @@
                                         class="ovpasstitle alt-font post-title text-medium text-extra-dark-gray width-100 display-block md-width-100 mb-3">
                                         DJ BEATMASTER</b>
                                     <div class="blog-content mt-3">
-                                        <p class="width-90 xs-width-100 color-black mx-auto">A well-known DJ in Atlanta
+                                        <p class="width-90 xs-width-100 color-black mx-auto">A well-known DJ in
                                             who leverages FutureStarr to share exclusive mixes and connect with fans. DJ
                                             BeatMaster is celebrated for his charismatic stage presence and innovative
                                             mixes, drawing large crowds and energizing any event.</p>
@@ -998,7 +998,7 @@
                                         <p class="width-90 xs-width-100 color-black mx-auto">A hip-hop duo that has seen
                                             significant revenue growth and fan engagement through their profile on
                                             FutureStarr. Rhythm and Flow combine dynamic lyrics with engaging
-                                            performances, quickly becoming a favorite in the Atlanta hip-hop scene.</p>
+                                            performances, quickly becoming a favorite in the hip-hop scene.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1199,9 +1199,9 @@
                             <div class="post-details p-3 d-flex flex-column">
                                 <p class="text-medium mb-0 text-black ovpasstitle">Model</p>
                                 <div class="separator-line-horrizontal-full bg-medium-light-gray my-2"></div>
-                                <p class="width-90 xs-width-100 color-black">Sell Your Modeling Agencies in Atlanta
+                                <p class="width-90 xs-width-100 color-black">Sell Your Modeling Agencies in
                                     Photos Attention all Models: market and sell your model photos here with Future
-                                    Starr. The Modeling Agencies in Atlanta industry is a tough market where it’s a...
+                                    Starr. The Modeling Agencies in industry is a tough market where it’s a...
                                 </p>
                             </div>
                         </div>

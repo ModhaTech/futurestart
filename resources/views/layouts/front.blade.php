@@ -65,8 +65,8 @@
 <meta name="keywords" content="privacy policy, privacy policy at Future Starr, Future Starr privacy policy, privacy policy update,">
 @elseif($registerRoute == 'talent.index')
 <meta name="title" content="Future Starr | Talent Mall | Star Shopping">
-<meta name="description" content="Future Starr online Talent Mall was discovered in Atlanta! Browse and Purchase some of the hottest undiscovered talents across the globe.">
-<meta name="keywords" content="biggest malls in america, largest malls in the world, largest malls in us, star shopping, where can I purchase, define purchase, underground rapper, atlanta underground mall, underground tattooing, hiphop undergound, undiscovered,">
+<meta name="description" content="Future Starr online Talent Mall was discovered! Browse and Purchase some of the hottest undiscovered talents across the globe.">
+<meta name="keywords" content="biggest malls in america, largest malls in the world, largest malls in us, star shopping, where can I purchase, define purchase, underground rapper, underground mall, underground tattooing, hiphop undergound, undiscovered,">
 @elseif(Request::is('social-buzz/*'))
 @php
 $social_desc = [

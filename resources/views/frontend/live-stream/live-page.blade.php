@@ -57,7 +57,7 @@
     </body>
 
 <script type="text/javascript">
-    const webSocketstreamlive = new WebSocket("ws://127.0.0.1:6001");
+    const webSocketstreamlive = new WebSocket("wss://staging.futurestarr.com:6001");
 
     webSocketstreamlive.onmessage = (event) => {
         handleSignallingDataLiveStream(JSON.parse(event.data));

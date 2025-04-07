@@ -105,7 +105,7 @@
  .hpfs01 {
     width: 100%;
     height: 100vh;
-    background: url('assets/images/new-home/home_bg_new.webp') no-repeat center center;
+    background: url('assets/images/new-home/home_bg_latest.jpeg') no-repeat center center;
     background-size: cover;
     position: relative;
     display: flex;
@@ -119,7 +119,7 @@
 }
 
     .hpfs01 {
-    background: url('https://www.futurestarr.com/assets/images/new-home/home_bg.png') no-repeat center center;
+    background: url('assets/images/new-home/home_bg_latest_mobile.jpeg') no-repeat center center;
     background-size: cover;
     width: 100%; /* Full width of the viewport */
     height: 54vh; /* Full height of the viewport */
@@ -728,7 +728,7 @@
    <section  class=" unic  bg-light-gray bg-light-cream">
         <div class="container unic1">
             <div class="text-center mb-3 mb-sm-5 text34">
-                <p class="alt-font text-medium-gray margin-5px-bottom text-uppercase text-small">FEATURES11</p>
+                <p class="alt-font text-medium-gray margin-5px-bottom text-uppercase text-small">FEATURES</p>
                 <h2 class="text-uppercase alt-font text-extra-dark-gray margin-20px-bottom font-weight-700 sm-width-100 xs-width-100 extras">@lang('home.WHOCHOOSE')</h2><span class="d-block separator-line-horrizontal-medium-light2 bg-deep-pink mx-auto width-100px"></span></div>
             <div class="row feature-box-content">
                 <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 nw">
@@ -803,7 +803,7 @@
                         <!-- Back Side (Content) -->
                         <div class="flip-card-back">
                             <h4 class="card-title">- JAZZY B -</h4>
-                            <p class="card-text">An upcoming Atlanta-based hip-hop artist who has used FutureStarr to grow her audience and sell her latest album.</p>
+                            <p class="card-text">An upcoming hip-hop artist who has used FutureStarr to grow her audience and sell her latest album.</p>
                         </div>
                     </div>
                 </div>
@@ -817,7 +817,7 @@
                         </div>
                         <div class="flip-card-back">
                             <h4 class="card-title">- DJ BEATMASTER B -</h4>
-                            <p class="card-text">A well-known DJ in Atlanta who leverages FutureStarr to share exclusive mixes and connect with fans.</p>
+                            <p class="card-text">A well-known DJ in who leverages FutureStarr to share exclusive mixes and connect with fans.</p>
                         </div>
                     </div>
                 </div>
@@ -847,11 +847,12 @@
     <section class="no-padding wow fadeIn bg-extra-dark-gray hpfs02" id="services">
         <div class="container-fluid no-padding">
             <div class="row equalize sm-equalize-auto no-margin n-dark-sec">
-                <div  class="col-md-6 position-relative sm-height-auto xs-height-350px wow slideInLeft hpfs03 image-blur hide1" data--duration="900ms">
-                    <video style="border: none !important;" muted loop autoplay>
-                      <source src="{{ asset('assets/images/post342.mp4') }}" type="video/mp4">
-                      Your browser does not support the video tag.
-                    </video>
+                <div class="col-md-6 position-relative sm-height-auto xs-height-350px wow slideInLeft hpfs03 image-blur hide1" data--duration="900ms">
+                    <img 
+                        src="{{ asset('assets/images/poster_ad.jpg') }}" 
+                        alt="Descriptive text" 
+                        style="width: 100%; height: 100%; object-fit: cover; border: none !important;" 
+                    />
                 </div>
                 <div class="col-md-6 wow slideInRight hpfs04" data--duration="900ms">
                     <div class="text-center text-md-left py-4 py-sm-5 px-md-4 p-lg-5 m-lg-5 text33">
