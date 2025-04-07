@@ -6,9 +6,9 @@
 /storage/*.key
 /storage/app/public
 /storage/debugbar
-/storage/framework/cache
-/storage/framework/sessions
-/storage/framework/views
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
 /storage/logs
 .env
 .env.*.backup
