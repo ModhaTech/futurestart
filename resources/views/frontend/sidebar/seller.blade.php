@@ -85,7 +85,7 @@
       <h3 class="user-indentify"> <span class="user-icon">   <img src="{{ !empty(Auth::user()->profile_pic) && file_exists(Auth::user()->profile_pic) ? asset(Auth::user()->profile_pic) : asset('assets/images/buyer/b-acount.png') }}" alt="profileImage"></span>
         {{ Auth::user()->username }} </h3>
    
-        <a class="custom-button" href="http://127.0.0.1:8000/buyer/message">
+        <a class="custom-button" href="/buyer/message">
           <i class="fa fa-eye" aria-hidden="true"></i> <span>Views  (1)</span> 
       </a>
 	   <a class="view" href="{{ route('seller.chatMessagees')}}">

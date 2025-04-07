@@ -107,13 +107,13 @@ button.conti-btn {
 			
 			<p>Primary</p>
 			<div class="master-card-dd">
-			 <div style="display: -webkit-inline-box;"><img src="http://127.0.0.1:8000/assets/images/cart/2.png" alt="Credit Card"><p style="margin-left:10px">Master card ending in 0645</p></div>
+			 <div style="display: -webkit-inline-box;"><img src="/assets/images/cart/2.png" alt="Credit Card"><p style="margin-left:10px">Master card ending in 0645</p></div>
 			 <div><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
 			</div>
 			
 			<p>Additional</p>
 			<div class="master-card-dd">
-			 <div style="display: -webkit-inline-box;"><img src="http://127.0.0.1:8000/assets/images/cart/1.png" alt="Credit Card"><p style="margin-left:10px">Visa ending in 9862</p></div>
+			 <div style="display: -webkit-inline-box;"><img src="/assets/images/cart/1.png" alt="Credit Card"><p style="margin-left:10px">Visa ending in 9862</p></div>
 			 <div><a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
 			</div>	
 			</div>	
@@ -149,7 +149,7 @@ button.conti-btn {
 							   
 							   <div class="col-xs-12 col-md-6 form-group wd-50-dd">
 								  <label class="control-label">Note: Your payment information is stored securely</label> 
-								  <img src="http://127.0.0.1:8000/assets/images/card-format.png" alt="Credit Card">
+								  <img src="/assets/images/card-format.png" alt="Credit Card">
 							   </div>
 							</div>
 				  </div>
@@ -165,10 +165,10 @@ button.conti-btn {
 							   <div class="col-xs-12 col-md-12 form-group wd-50-dd">
 								  <div class="card-num">
 								  <div><label class="control-label required">Card Number</label></div>
-									<div><img src="http://127.0.0.1:8000/assets/images/discover.png" alt="Credit Card">								  
-									<img src="http://127.0.0.1:8000/assets/images/amex.png" alt="Credit Card">								  
-									<img src="http://127.0.0.1:8000/assets/images/mastercard.png" alt="Credit Card">								  
-									<img src="http://127.0.0.1:8000/assets/images/visa.png" alt="Credit Card"></div>	
+									<div><img src="/assets/images/discover.png" alt="Credit Card">
+									<img src="/assets/images/amex.png" alt="Credit Card">
+									<img src="/assets/images/mastercard.png" alt="Credit Card">
+									<img src="/assets/images/visa.png" alt="Credit Card"></div>
 									</div>									
 								  <input autocomplete="off" class="form-control card-cvc" placeholder="" size="4" type="text">
 							   </div>							   

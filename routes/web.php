@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RSSFeedController;
 use App\Http\Controllers\blogsitemapController;
@@ -96,7 +98,7 @@ Route::get('home_more', 'HomeController@home_more')->name('home.more');
 // Route::get('newhome', 'HomeController@newhome')->name('newhome');
 // Route::get('homenew', 'HomeController@homenew')->name('homenew');
 
-Route::get('/', 'HomeController@newhome')->name('home');
+    Route::get('/', 'HomeController@newhome2')->name('home');
 
 // });
 //  Route::get('starr/{slug?}', [SearchController::class, 'indexnew'])->name('search.newstarr');
@@ -140,6 +142,9 @@ Route::get('api/get-unread-message/guest/{sender_id}', 'Admin\SupportChatGuestCo
 Route::get('api/get-unread-message/user/{sender_id}', 'Admin\SupportChatGuestController@getUnreadMessagesUser')->name('user.chat.get.unread');
 
 Auth::routes();
+
+// we will update the Register page next to begin the 2nd phase of the overhaul to bring this application into 2025
+//Route::get('/register', [RegisterController::class, 'showRegistrationFormInertia'])->middleware('guest')->name('register');
 
 Route::get('/load-latest-messages', 'MessagesController@getLoadLatestMessages')->name('load-latest-message');
 Route::post('/send', 'MessagesController@postSendMessage')->name('send-message');

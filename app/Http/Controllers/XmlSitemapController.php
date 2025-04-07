@@ -77,7 +77,7 @@ class XmlSitemapController extends Controller
       echo '<loc>'.url('/'.$basedata) .'</loc>' . PHP_EOL;
       echo '<priority>0.80</priority>' . PHP_EOL;
       echo '</url>' . PHP_EOL;
-      }.
+      }
       foreach($blogs as $blog)
       {
       echo '<url>' . PHP_EOL;

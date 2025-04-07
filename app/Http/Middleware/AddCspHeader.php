@@ -18,7 +18,7 @@ class AddCspHeader
     {
         $response = $next($request);
 
-        $response->header('Content-Security-Policy', "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src 'self' data: *; media-src 'self' *; font-src 'self' *; connect-src 'self' *; object-src 'self' *; frame-src 'self' *; child-src 'self' *; form-action 'self' *; frame-ancestors 'self' *; base-uri 'self' *; manifest-src 'self' *; worker-src 'self' *; navigate-to 'self' *;");
+        $response->header('Content-Security-Policy', "default-src 'self' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src 'self' data: *; media-src 'self' *; font-src 'self' *; connect-src 'self' *; object-src 'self' *; frame-src 'self' *; child-src 'self' *; form-action 'self' *; frame-ancestors 'self' *; base-uri 'self' *; manifest-src 'self' *; worker-src 'self' *;");
 
         return $response;
     }

@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 display-table page-title-large">
-      
+
       </div>
     </div>
   </div>
@@ -41,7 +41,7 @@
         </p>
         <!-- <a class="generic-button" routerLink="/blog/detailed">Read More</a> -->
         <div class="about-action-button" >
-           @if($authCheck ==true) 
+           @if($authCheck ==true)
                <a class="about-us-sm read-more-btn-onslider about-us-color" href="{{ route('buyer.dashboard')}}">BUY TALENT</a>
                 <button class="about-us-sm read-more-btn-onslider about-us-color" (click)="sellTalent()">SELL YOUR TALENT</button>
            @else
@@ -72,7 +72,7 @@
                         <div class="col-sm-5 text-center login-back">
 
                             <h4 class="mo-sign-awe">
-                    Awe, looks like you have not 
+                    Awe, looks like you have not
                 </h4>
                             <h4 class="mo-sign-fr">signed up for Future Starr.</h4>
                             <p class="mo-now"><b>No worries, click the Register</b></p>
@@ -83,7 +83,7 @@
                         </div>
                         <div class="col-sm-7 text-center login-back-img">
                             <button type="button" class="close desk-cls" data-dismiss="modal">&times;</button>
-                           
+
                             <p class="closer-data"></p>
                             <h3 class="closer-data"></h3>
                             <p class="closer-data"></p>
@@ -121,7 +121,7 @@
                         </div>
                         <div class="col-sm-7 text-center login-back-img">
                             <button type="button" class="close desk-cls" data-dismiss="modal">&times;</button>
-                           
+
                             <p class="closer-data"></p>
                             <h3 class="closer-data"></h3>
                             <p class="closer-data"></p>

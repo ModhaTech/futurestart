@@ -1,0 +1,52 @@
+# Laravel
+/vendor
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/storage/app/public
+/storage/debugbar
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+/storage/logs
+.env
+.env.*.backup
+.phpunit.result.cache
+
+# Laravel Sail
+docker-compose.override.yml
+
+# Vite
+.vite
+resources/js/.vitepress/dist
+resources/js/.vitepress/cache
+
+# NPM
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Composer
+composer.lock
+
+# IDEs
+.idea
+*.iml
+
+# OS generated
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Optional: if you use Laravel Telescope
+storage/telescope
+
+# Optional: if you use Laravel Horizon
+storage/horizon
+
+# Optional: if you use Xdebug with PhpStorm and store debug outputs
+.phpstorm.meta.php

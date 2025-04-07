@@ -44,8 +44,8 @@ mix.js([
 // 	'public/assets/prod/cssmove/style2.min.css')
 //    .purgeCss();
 
-mix.postCss('public/style.css', 
-	'public/assets/prod/cssmove/style.min.css').purgeCss();
+// mix.postCss('public/style.css',
+// 	'public/assets/prod/cssmove/style.min.css').purgeCss();
 
 mix.styles([
 		'public/assets/css/bootstrap/bootstrap.min.css',

@@ -12,10 +12,11 @@ use App\User;
 use Cache;
 use Auth;
 use DB as DB;
+use Inertia\Inertia;
 use Response;
 use App\Models\FavrioteUser;
 use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Log; 
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -28,24 +29,24 @@ class HomeController extends Controller
     /*** Show the application dashboard.** @return \Illuminate\Contracts\Support\Renderable*/
     public function index(Request $request)
     {
-      
+
         $blogs = BlogContent::with('getBlogCatagories')->where('blog_status', 1)->orderBy('id', 'DESC')
-        ->limit(3)->get();
+                            ->limit(3)->get();
         $metaTags =  Metatags::where('page_title','=','Home')->first();
         // $catagories = TalentCatagory::all()->random(8);
         $catagories = TalentCatagory::whereNotIn('id', [17,18])->inRandomOrder()->limit(8)->get();
 
         $display_pop = session('welcome_user');
-        if ($display_pop == 'seller' || $display_pop == 'buyer') 
+        if ($display_pop == 'seller' || $display_pop == 'buyer')
         {
             $request->session()->pull('welcome_user');
         }
-        
+
         $users = [];
-        
-        if(!empty(Auth::check())) 
+
+        if(!empty(Auth::check()))
         {
-             $users = $this->users();
+            $users = $this->users();
         }
         if (Auth::check()==true)
         {
@@ -53,20 +54,20 @@ class HomeController extends Controller
         }
         else
         {
-         return view($this->getView('home'),compact('blogs','metaTags', 'catagories', 'display_pop'));
+            return view($this->getView('home'),compact('blogs','metaTags', 'catagories', 'display_pop'));
         }
     }
 
     public function home_more()
     {
         $blogs = BlogContent::with('getBlogCatagories')->where('blog_status', 1)->orderBy('id', 'DESC')
-        ->limit(3)->get();
+                            ->limit(3)->get();
         $catagories = TalentCatagory::whereNotIn('id', [17,18])->inRandomOrder()->limit(8)->get();
         $response = view('home_more',compact('blogs', 'catagories'))->render();
         return Response::json($response);
     }
 
-    public function users() 
+    public function users()
     {
         // $users = [];
         // $fav_users = [];
@@ -95,37 +96,37 @@ class HomeController extends Controller
         $fav_users = [];
 
         $return = [];
-               $return[] = view('chat-users-list')->with(['users' => $users, 'fav_users' => $fav_users])->render();
+        $return[] = view('chat-users-list')->with(['users' => $users, 'fav_users' => $fav_users])->render();
         return response()->json(['state' => 1, 'messages' => $return]);
-        
+
     }
 
-    public function searchChatUsers(Request $request) 
+    public function searchChatUsers(Request $request)
     {
-       if($request->ajax()) 
+        if($request->ajax())
         {
             $users = [];
             $fav_users = [];
-            
+
             $following = DB::table('fanbases')
-                        ->join('users','fanbases.follower', '=', 'users.id')
-                        ->join('users_roles', 'users.role_id', '=', 'users_roles.id')
-                        ->select('fanbases.*','users.first_name','users.last_name', 'users.id as user_id', 'users.profile_pic', 'users.public_profile', 'users.username', 'users.email', 'users_roles.name as role','users_roles.id as role_id')
-                        ->where('following', Auth::user()->id)
-                        ->where('follower','!=' ,Auth::user()->id)
-                        ->where('is_fav','!=' , '1')
-                        ->where('users.username','LIKE',"%{$request->search}%")
-                        ->get()->toArray();
+                           ->join('users','fanbases.follower', '=', 'users.id')
+                           ->join('users_roles', 'users.role_id', '=', 'users_roles.id')
+                           ->select('fanbases.*','users.first_name','users.last_name', 'users.id as user_id', 'users.profile_pic', 'users.public_profile', 'users.username', 'users.email', 'users_roles.name as role','users_roles.id as role_id')
+                           ->where('following', Auth::user()->id)
+                           ->where('follower','!=' ,Auth::user()->id)
+                           ->where('is_fav','!=' , '1')
+                           ->where('users.username','LIKE',"%{$request->search}%")
+                           ->get()->toArray();
 
             $fav = DB::table('fanbases')
-                        ->join('users','fanbases.follower', '=', 'users.id')
-                        ->join('users_roles', 'users.role_id', '=', 'users_roles.id')
-                        ->select('fanbases.*','users.first_name','users.last_name', 'users.id as user_id', 'users.profile_pic', 'users.public_profile', 'users.username', 'users.email', 'users_roles.name as role','users_roles.id as role_id')
-                        ->where('following', Auth::user()->id)
-                        ->where('follower','!=' ,Auth::user()->id)
-                        ->where('is_fav','!=' , '0')
-                        ->where('users.username','LIKE',"%{$request->search}%")
-                        ->get()->toArray();
+                     ->join('users','fanbases.follower', '=', 'users.id')
+                     ->join('users_roles', 'users.role_id', '=', 'users_roles.id')
+                     ->select('fanbases.*','users.first_name','users.last_name', 'users.id as user_id', 'users.profile_pic', 'users.public_profile', 'users.username', 'users.email', 'users_roles.name as role','users_roles.id as role_id')
+                     ->where('following', Auth::user()->id)
+                     ->where('follower','!=' ,Auth::user()->id)
+                     ->where('is_fav','!=' , '0')
+                     ->where('users.username','LIKE',"%{$request->search}%")
+                     ->get()->toArray();
 
             $users = $following;
             $fav_users = $fav;
@@ -137,16 +138,16 @@ class HomeController extends Controller
         }
     }
 
-    public function oldhomepage(Request $request) 
+    public function oldhomepage(Request $request)
     {
         $blogs = BlogContent::with('getBlogCatagories')->where('blog_status', 1)->orderBy('id', 'desc')->limit(3)->get();
         $metaTags =  Metatags::where('page_title','=','Home')->first();
         $catagories = TalentCatagory::all()->random(8);
-  
+
         $users = [];
-        if(!empty(Auth::check())) 
+        if(!empty(Auth::check()))
         {
-             $users = $this->users();
+            $users = $this->users();
         }
         return view('home--old',compact('blogs','metaTags', 'catagories', 'users'));
 
@@ -154,35 +155,35 @@ class HomeController extends Controller
 
     private function getView($viewName)
     {
-        if (request()->segment(1) == 'amp') 
+        if (request()->segment(1) == 'amp')
         {
-            if (view()->exists($viewName . '-amp')) 
+            if (view()->exists($viewName . '-amp'))
             {
                 $viewName .= '-amp';
-            } 
-            else 
+            }
+            else
             {
                 abort(404);
             }
         }
         return $viewName;
     }
-    
-   public function newhome(Request $request){
-        
-       
-         $blogs = BlogContent::with('getBlogCatagories')->where('blog_status', 1)->orderBy('id', 'DESC')
-        ->limit(3)->get();
+
+    public function newhome(Request $request){
+
+
+        $blogs = BlogContent::with('getBlogCatagories')->where('blog_status', 1)->orderBy('id', 'DESC')
+                            ->limit(3)->get();
         $metaTags =  Metatags::where('page_title','=','Home')->first();
         // $catagories = TalentCatagory::all()->random(8);
         $catagories = TalentCatagory::whereNotIn('id', [17,18])->inRandomOrder()->limit(8)->get();
 
         $display_pop = session('welcome_user');
-        if ($display_pop == 'seller' || $display_pop == 'buyer') 
+        if ($display_pop == 'seller' || $display_pop == 'buyer')
         {
             $request->session()->pull('welcome_user');
         }
-        
+
         $users = [];
 
 
@@ -195,9 +196,9 @@ class HomeController extends Controller
             $current_user = Auth::user(); // Get logged-in user data
         }
 
-        if(!empty(Auth::check())) 
+        if(!empty(Auth::check()))
         {
-             $users = $this->users();
+            $users = $this->users();
         }
         if (Auth::check()==true)
         {
@@ -205,29 +206,29 @@ class HomeController extends Controller
         }
         else
         {
-         return view($this->getView('newhome'),compact('blogs','metaTags', 'catagories', 'display_pop', 'current_user'));
+            return view($this->getView('newhome'),compact('blogs','metaTags', 'catagories', 'display_pop', 'current_user'));
         }
     }
-    
-     public function homenew(Request $request){
-        
-         $blogs = BlogContent::with('getBlogCatagories')->where('blog_status', 1)->orderBy('id', 'DESC')
-        ->limit(3)->get();
+
+    public function homenew(Request $request){
+
+        $blogs = BlogContent::with('getBlogCatagories')->where('blog_status', 1)->orderBy('id', 'DESC')
+                            ->limit(3)->get();
         $metaTags =  Metatags::where('page_title','=','Home')->first();
         // $catagories = TalentCatagory::all()->random(8);
         $catagories = TalentCatagory::whereNotIn('id', [17,18])->inRandomOrder()->limit(8)->get();
 
         $display_pop = session('welcome_user');
-        if ($display_pop == 'seller' || $display_pop == 'buyer') 
+        if ($display_pop == 'seller' || $display_pop == 'buyer')
         {
             $request->session()->pull('welcome_user');
         }
-        
+
         $users = [];
-        
-        if(!empty(Auth::check())) 
+
+        if(!empty(Auth::check()))
         {
-             $users = $this->users();
+            $users = $this->users();
         }
         if (Auth::check()==true)
         {
@@ -235,8 +236,32 @@ class HomeController extends Controller
         }
         else
         {
-         return view($this->getView('homenew'),compact('blogs','metaTags', 'catagories', 'display_pop'));
+            return view($this->getView('homenew'),compact('blogs','metaTags', 'catagories', 'display_pop'));
         }
     }
-    
+
+    public function newhome2(Request $request){
+
+        $blogs = BlogContent::with('getBlogCatagories')->where('blog_status', 1)->orderBy('id', 'DESC')
+                            ->limit(3)->get();
+        $metaTags =  Metatags::where('page_title','=','Home')->first();
+        // $catagories = TalentCatagory::all()->random(8);
+        $catagories = TalentCatagory::whereNotIn('id', [17,18])->inRandomOrder()->limit(8)->get();
+
+        $display_pop = session('welcome_user');
+        if ($display_pop == 'seller' || $display_pop == 'buyer')
+        {
+            $request->session()->pull('welcome_user');
+        }
+
+        $users = [];
+
+        if(!empty(Auth::check()))
+        {
+            $users = $this->users();
+        }
+
+        return Inertia::render('Home', compact('blogs','metaTags', 'catagories', 'display_pop', 'users'));
+    }
+
 }

@@ -15,10 +15,10 @@ Route::post('/login/user', 'CustomLoginController@loginUser')->name('login.user'
 // Route::get ( '/callback-facebook/{service}', 'SocialAuthFacebookController@callback' );
 // Route::get ( '/redirect-facebook/{service?}', 'SocialAuthFacebookController@redirect' )->name('facebook');
 
-Route::get('login/facebook', 'SocialAuthFacebookController@redirectToFacebook');
+Route::get('login/facebook', 'SocialAuthFacebookController@redirectToFacebook')->name('signin_with_facebook');
 Route::get('login/facebook/callback', 'SocialAuthFacebookController@handleFacebookCallback');
 
-Route::get('login/linkedin', 'SocialAuthLinkedinController@redirectToLinkedin');
+Route::get('login/linkedin', 'SocialAuthLinkedinController@redirectToLinkedin')->name('signin_with_linkedin');
 Route::get('login/linkedin/callback', 'SocialAuthLinkedinController@handleLinkedinCallback');
 
 Route::get ( '/callback-twitter/{service}', 'SocialAuthTwitterController@callback' );

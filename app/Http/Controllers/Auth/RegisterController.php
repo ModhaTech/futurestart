@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Inertia\Inertia;
 use Session;
 use App\Traits\MailsendTrait;
 use Illuminate\Support\Str;
@@ -252,6 +253,9 @@ class RegisterController extends Controller
 
     }
 
-
+    public function showRegistrationFormInertia()
+    {
+        return Inertia::render('Auth/Register');
+    }
 }
  

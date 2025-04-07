@@ -60,6 +60,13 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
+  'inertiajs/inertia-laravel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Inertia\\ServiceProvider',
+    ),
+  ),
   'intervention/image' => 
   array (
     'providers' => 
@@ -181,6 +188,13 @@
     'aliases' => 
     array (
       'ResponseCache' => 'Spatie\\ResponseCache\\Facades\\ResponseCache',
+    ),
+  ),
+  'tightenco/ziggy' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Tightenco\\Ziggy\\ZiggyServiceProvider',
     ),
   ),
   'tymon/jwt-auth' => 

@@ -392,19 +392,19 @@ if(!empty($segment)) { $bodyClass = Request::segment(1); } else { $bodyClass ='h
 
 	<!--<link  href="{{ url('assets/prod/css/main.min.css') }}" rel="stylesheet">-->
 	{{-- <link href="https://futurestarr.com/public/assets/prod/css/main.min.css" rel="stylesheet"> --}}
-	<link href="http://127.0.0.1:8000/assets/prod/css/main.min.css" rel="stylesheet">
+	<link href="assets/prod/css/main.min.css" rel="stylesheet">
 
 	<script  src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!--<script  src="https://futurestarr.b-cdn.net/jquery-3.4.1.min.js" ></script>-->
 
 	<!-- <script defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5874817565023470" crossorigin="anonymous"></script> -->
 
-	<script defer src="http://127.0.0.1:8000/public/assets/js/popper.min.js"></script>
+	<script defer src="/public/assets/js/popper.min.js"></script>
 	<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
-	<script src="http://127.0.0.1:8000/public/assets/js/toastr.min.js"></script>
+	<script src="/public/assets/js/toastr.min.js"></script>
 	<script defer src="{{asset('/js/lightslider.js') }}" ></script>
 	<script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
-	<script src="http://127.0.0.1:8000/node_modules/axios/dist/axios.min.js"></script>
+	<script src="/node_modules/axios/dist/axios.min.js"></script>
 	<script defer src="https://js.stripe.com/v2/"></script>
 	<script  src="https://www.googletagmanager.com/gtag/js?id=UA-39143753-1"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -14,5 +14,6 @@ Route::get('/privacy-policy', 'PagesController@index')->name('privacy-policy');
 Route::get('/term-conditions', 'PagesController@termsAndConditions')->name('term-conditions');
 Route::get('/refund-policy', 'PagesController@refundPolicy')->name('refund-policy');
 
-Route::get('/about-us', 'AboutusController@index')->name('about-us');
+//Route::get('/about-us', 'AboutusController@index')->name('about-us');
+Route::get('/about-us', 'AboutusController@indexInertia')->name('about-us');
 Route::get('/thank-you', 'ThankyouController@index')->name('thank-you');

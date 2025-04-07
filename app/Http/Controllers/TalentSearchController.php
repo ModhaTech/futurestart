@@ -13,49 +13,52 @@ class TalentSearchController extends Controller
     /**
      * Display a listing of the search
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index(Request $request)
     {
-        if(!empty($request['search']))
-        {
-             $talents = [];
-             $categories = [];
-             $talentList ='';
-             $categoryList = '';
-             $talentListArr = [];
-             $categoryListArr = [];
-             $sellers = [];
-             $buyers = [];
-             
-            $qry = str_split($request['search']);
-            $n = '';
-            foreach($qry as $q){
-                $n = $n . $q . "%";
-            }
-             $searchQuery = rtrim($n, "%");
+        $query = trim($request->input('search'));
 
-             $condition = ['active' => 'Active' , 'approved'=> 1];
-             
-             $talents = Talents::where('title', 'like', '%' . $searchQuery . '%')->where($condition)->get();
-             $talentCount = count($talents);
-             $categories = TalentCatagory::where('name', 'like', '%' . $searchQuery . '%')->get();
-             $categoriesCount = count($categories);
-             
-             $sellerCondition = ['role_id' => 4];
-             $sellers = User::where('username', 'like', '%' . $searchQuery . '%')->where($sellerCondition)->get();
-             $sellersCount = count($sellers);
+        if (empty($query)) {
+            return response()->json([
+                'state' => 0,
+                'message' => 'Empty search query.',
+                'results' => []
+            ]);
+        }
 
-             $buyerCondition = ['role_id' => 3];
-             $buyers = User::where('username', 'like', '%' . $searchQuery . '%')->where($buyerCondition)->get();
-             $buyersCount = count($buyers);
-            
-             $return[] = view('home-search')->with(['talents' => $talents, 'talentCount'=> $talentCount, 'categories'=> $categories, 'categoriescount'=> $categoriesCount, 'sellers' => $sellers , 'sellersCount' => $sellersCount, 'buyers' => $buyers , 'buyersCount' => $buyersCount])->render();
+        // Expand input into smart wildcards, e.g. "talent" → "t%a%l%e%n%t"
+        $wildcard = implode('%', str_split($query));
 
-          
-             return response()->json(['state' => 1, 'searhlist' => $return]);
+        // Common filters
+        $talentConditions = ['active' => 'Active', 'approved' => 1];
 
-        }  
+        // Run all queries
+        $talents = Talents::where('title', 'like', "%{$wildcard}%")
+                          ->where($talentConditions)
+                          ->get();
+
+        $categories = TalentCatagory::where('name', 'like', "%{$wildcard}%")
+                                    ->get();
+
+        $sellers = User::where('username', 'like', "%{$wildcard}%")
+                       ->where('role_id', 4)
+                       ->get();
+
+        $buyers = User::where('username', 'like', "%{$wildcard}%")
+                      ->where('role_id', 3)
+                      ->get();
+
+        // Return structured JSON
+        return response()->json([
+            'state' => 1,
+            'results' => [
+                'talents' => $talents,
+                'categories' => $categories,
+                'sellers' => $sellers,
+                'buyers' => $buyers,
+            ]
+        ]);
     }
 
 }
