@@ -209,8 +209,8 @@ Route::group(['middleware' => ['jwt', 'XSS', 'activity'], 'prefix' => '/v1'], fu
     Route::get('/auto-reply','Api\ChatMessageController@sendAutoMessage');
 
 
-    Route::get('/load-latest-messages','Api\FloatChatController@getLoadLatestMessages')->name('load-latest-message');
-    Route::post('/send','Api\FloatChatController@postSendMessage')->name('send-message');
+    Route::get('/load-latest-messages','Api\FloatChatController@getLoadLatestMessages')->name('seller.load-latest-message');
+    Route::post('/send','Api\FloatChatController@postSendMessage')->name('api.send-message');
     Route::post('/send/del','Api\FloatChatController@deleteMessage');
     Route::get('/fetch-old-messages','Api\FloatChatController@getOldMessages');
     Route::get('/get-chat-users','Api\FloatChatController@users');
